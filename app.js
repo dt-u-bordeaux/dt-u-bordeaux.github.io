@@ -229,7 +229,9 @@ const PAGES = {
       <div class="wrap section project-layout">
         <div>
           <h2>About the project</h2>
-          ${p.description.map(t => `<p>${esc(t)}</p>`).join("")}
+          ${p.description.map(t => typeof t === "string"
+            ? `<p>${esc(t)}</p>`
+            : `<${t.ordered ? "ol" : "ul"} class="bullets">${t.items.map(i => `<li>${esc(i)}</li>`).join("")}</${t.ordered ? "ol" : "ul"}>`).join("")}
           ${p.perspectives ? `<h2>Research perspectives</h2><ul class="bullets">${p.perspectives.map(t => `<li>${esc(t)}</li>`).join("")}</ul>` : ""}
           <h2>Publications <span class="count-badge">${pubs.length}</span></h2>
           ${pubs.length ? `<ol class="pubs">${pubs.map(x => pubItem(x, false)).join("")}</ol>` : '<p class="muted">Publications coming soon.</p>'}

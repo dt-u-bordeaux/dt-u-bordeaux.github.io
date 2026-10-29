@@ -19,6 +19,7 @@ const ICONS = {
   mail: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>',
   pin: '<path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/>',
   globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>',
+  box: '<path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/>',
   cycle: '<path d="M20 12a8 8 0 0 1-13.7 5.7M4 12a8 8 0 0 1 13.7-5.7"/><path d="M18 3v4h-4M6 21v-4h4"/>',
   network: '<circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="18" r="2.5"/><circle cx="19" cy="18" r="2.5"/><circle cx="12" cy="13" r="2"/><path d="M12 7.5V11M10.4 14.3l-3.6 2.4M13.6 14.3l3.6 2.4"/>',
   check: '<path d="M12 3 4 6v6c0 4.5 3.4 8.2 8 9 4.6-.8 8-4.5 8-9V6l-8-3Z"/><path d="m8.5 12 2.5 2.5 4.5-5"/>',
@@ -44,7 +45,7 @@ function renderLayout() {
     if (href !== "research.html")
       return `<a href="${href}"${active}${href === page ? ' aria-current="page"' : ""}>${label}</a>`;
     const items = PROJECTS.map(p =>
-      `<a href="${projectHref(p)}"${projectHref(p) === page ? ' class="active" aria-current="page"' : ""}>${esc(p.short)}<small>${esc(p.title)}</small></a>`).join("");
+      `<a href="${projectHref(p)}"${projectHref(p) === page ? ' class="active" aria-current="page"' : ""}>${esc(p.title)}</a>`).join("");
     return `
       <div class="dropdown">
         <button class="drop-btn${active ? " active" : ""}" id="dropBtn" aria-expanded="false" aria-haspopup="true">${label}
@@ -124,11 +125,10 @@ function twinMark() {
 /* ---------- Components ---------- */
 
 function projectCard(p, n) {
-  const label = [p.group, p.programme].filter(Boolean).join(" · ");
   return `
-    <a class="card axis${p.flagship ? " flagship" : ""}" href="${projectHref(p)}">
-      <div class="card-top"><span class="axis-icon">${icon(p.icon, "ico lg")}</span>${p.flagship ? '<span class="chip chip-accent">Application focus</span>' : ""}</div>
-      <span class="axis-num">${n ? String(n).padStart(2, "0") + (label ? " · " : "") : ""}${esc(label)}</span>
+    <a class="card axis" href="${projectHref(p)}">
+      <span class="axis-icon">${icon(p.icon, "ico lg")}</span>
+      <span class="axis-num">${String(n).padStart(2, "0")}</span>
       <h3>${esc(p.title)}</h3>
       <p>${esc(p.summary)}</p>
       <span class="more">View project ${icon("arrow", "ico sm")}</span>
@@ -222,6 +222,7 @@ const PAGES = {
           <a class="back" href="research.html">← All projects</a>
           <div class="card-top"><span class="chips">${p.group ? `<span class="chip chip-dark">${p.group === "UDT" ? "Urban Digital Twin" : esc(p.group)}</span>` : ""}${p.programme ? `<span class="chip chip-dark">${esc(p.programme)}</span>` : ""}</span>${p.status ? `<span class="status status-dark">${esc(p.status)}</span>` : ""}</div>
           <h1>${esc(p.title)}</h1>
+          ${p.fullName ? `<p class="full-name">${esc(p.fullName)}</p>` : ""}
           <p class="lead">${esc(p.summary)}</p>
         </div>
       </section>

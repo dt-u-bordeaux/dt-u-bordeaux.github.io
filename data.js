@@ -18,22 +18,40 @@ const SITE = {
 /* Research axes, shown under "What we work on" on the home page. */
 const AXES = [
   {
-    id: "urban",
-    title: "Urban Digital Twins",
-    icon: "city",
-    summary: "Multi-scale, multi-perspective digital twins of cities and territories — mobility, campus infrastructure, resilience and crisis management.",
+    id: "foundations",
+    title: "Digital Twin Foundations & Engineering",
+    icon: "layers",
+    summary: "Concepts, generic architectures, data management and the systems-engineering methodology that turns modeling & simulation into operational digital twins.",
   },
   {
-    id: "foundations",
-    title: "Digital Twin Foundations",
-    icon: "layers",
-    summary: "Generic architectures, data management frameworks and the systems-engineering methodology that turns modeling & simulation into operational digital twins.",
+    id: "urban",
+    title: "Urban Digital Twin",
+    icon: "city",
+    summary: "Multi-scale, multi-perspective digital twins of cities and territories — mobility, campus infrastructure and resilience.",
   },
   {
     id: "human",
-    title: "Human-Centred Digital Twins",
+    title: "Human-Centered Digital Twins",
     icon: "people",
     summary: "Immersive, cognitive and citizen-facing digital twins that put people in the loop of design and decision making.",
+  },
+  {
+    id: "product",
+    title: "Product Digital Twins",
+    icon: "box",
+    summary: "Digital twins that follow a product through its life cycle and how it is used.",
+  },
+  {
+    id: "circular",
+    title: "Digital Twins in Circular Economy",
+    icon: "cycle",
+    summary: "Digital twins that support the reuse, remanufacturing and regeneration of products.",
+  },
+  {
+    id: "ecosystem",
+    title: "Digital Twin Ecosystem",
+    icon: "network",
+    summary: "Systems of systems: interconnected digital twins that work together as an ecosystem.",
   },
 ];
 
@@ -47,12 +65,12 @@ const PROJECTS = [
     id: "ubudt",
     group: "UDT",
     programme: "ACT",
-    flagship: true,
     icon: "city",
-    title: "UDT — UBUDT-ACT: University of Bordeaux Urban Digital Twin",
-    short: "UBUDT-ACT",
+    title: "UDT — ACT-UBUDT",
+    fullName: "University of Bordeaux Urban Digital Twin, ACT programme",
+    short: "ACT-UBUDT",
     status: "Ongoing",
-    summary: "Our current application focus: an urban digital twin of the University of Bordeaux campus, carried out within the University of Bordeaux's ACT programme, with mobility as the first use case.",
+    summary: "An urban digital twin of the University of Bordeaux campus, carried out within the University of Bordeaux's ACT programme, with mobility as the first use case.",
     description: [
       "UBUDT develops an urban digital twin of the University of Bordeaux campus as a living testbed for urban digital twin engineering. It is carried out within ACT, one of the University of Bordeaux's institutional projects.",
       "The project applies a holistic, multi-scale and multi-perspective development approach and a platform-centric methodology aimed at scalable urban digital twins. Mobility is the first operational use case, combining data-driven and model-driven techniques to represent and simulate how people and vehicles move across the territory.",
@@ -79,7 +97,8 @@ const PROJECTS = [
   },
   {
     id: "regecos",
-    title: "RegEcoS — Ecosystem for the regeneration of products based on their uses",
+    title: "RegEcoS — DT in Circular Economy",
+    fullName: "Ecosystem for the regeneration of products based on their uses",
     short: "RegEcoS",
     icon: "cycle",
     status: "",
@@ -93,7 +112,7 @@ const PROJECTS = [
   },
   {
     id: "regenexus",
-    title: "RegeNexus — System-of-systems digital twins",
+    title: "RegeNexus — System-of-Systems DT / DT Ecosystem",
     short: "RegeNexus",
     icon: "network",
     status: "",

@@ -252,10 +252,8 @@ a.card p { color: var(--muted); font-size: .95rem; }
 /* ---------- Main projects & sub-projects ---------- */
 .axis { display: flex; flex-direction: column; }
 .axis-num { font-family: var(--mono); font-size: .75rem; color: var(--muted); letter-spacing: .1em; display: block; margin-bottom: 4px; }
-.chip-accent { background: var(--accent); color: #fff; }
 .chip-plain { background: var(--surface-2); color: var(--muted); }
 .mini-label { font-size: .75rem; color: var(--muted); align-self: center; }
-.flagship { border-color: var(--accent); }
 .axis p { color: var(--muted); font-size: .95rem; }
 .axis .more { margin-top: auto; }
 .cards-4 { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
@@ -276,3 +274,4 @@ a.card p { color: var(--muted); font-size: .95rem; }
   .drop-btn { width: 100%; justify-content: space-between; }
   .drop-menu { position: static; width: auto; box-shadow: none; border: 0; padding: 0 0 0 12px; }
 }
+.full-name { font-family: var(--serif); font-size: 1.2rem; color: var(--on-dark); margin: -.2em 0 .8em; }

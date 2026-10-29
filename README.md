@@ -10,4 +10,5 @@ All projects, team members, publications and news live in [`data.js`](data.js).
 Add or edit an entry there; every page picks it up automatically.
 
 - Each project has its own page, `<project-id>.html` (team, publications, news linked by id). To add a project, copy one of these pages and change `data-project` on its `<body>`.
+- After changing `data.js`, `app.js` or `styles.css`, raise the `?v=` number on their links in every `.html` page so browsers load the new version instead of a cached one.
 - Plain HTML/CSS/JS, no build step. Served by GitHub Pages from the `main` branch root.

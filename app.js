@@ -18,6 +18,10 @@ const ICONS = {
   arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
   mail: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>',
   pin: '<path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/>',
+  globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>',
+  cycle: '<path d="M20 12a8 8 0 0 1-13.7 5.7M4 12a8 8 0 0 1 13.7-5.7"/><path d="M18 3v4h-4M6 21v-4h4"/>',
+  network: '<circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="18" r="2.5"/><circle cx="19" cy="18" r="2.5"/><circle cx="12" cy="13" r="2"/><path d="M12 7.5V11M10.4 14.3l-3.6 2.4M13.6 14.3l3.6 2.4"/>',
+  check: '<path d="M12 3 4 6v6c0 4.5 3.4 8.2 8 9 4.6-.8 8-4.5 8-9V6l-8-3Z"/><path d="m8.5 12 2.5 2.5 4.5-5"/>',
   link: '<path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/>',
 };
 const icon = (name, cls = "ico") =>
@@ -97,11 +101,12 @@ function twinMark() {
 
 /* ---------- Components ---------- */
 
-function projectCard(p) {
-  const axis = byId(AXES, p.axis);
+function projectCard(p, n) {
+  const label = [p.group, p.programme].filter(Boolean).join(" · ");
   return `
-    <a class="card project-card" href="project.html?id=${encodeURIComponent(p.id)}">
-      <div class="card-top"><span class="chip">${esc(axis ? axis.title : "")}</span><span class="status">${esc(p.status)}</span></div>
+    <a class="card axis${p.flagship ? " flagship" : ""}" href="project.html?id=${encodeURIComponent(p.id)}">
+      <div class="card-top"><span class="axis-icon">${icon(p.icon, "ico lg")}</span>${p.flagship ? '<span class="chip chip-accent">Application focus</span>' : ""}</div>
+      <span class="axis-num">${n ? String(n).padStart(2, "0") + (label ? " · " : "") : ""}${esc(label)}</span>
       <h3>${esc(p.title)}</h3>
       <p>${esc(p.summary)}</p>
       <span class="more">View project ${icon("arrow", "ico sm")}</span>
@@ -133,6 +138,7 @@ function memberCard(m) {
     `<a href="${k === "email" ? "mailto:" + esc(v) : esc(v)}" target="_blank" rel="noopener">${labels[k] || k}</a>`).join("");
   const projects = PROJECTS.filter(p => p.members.includes(m.id))
     .map(p => `<a class="chip chip-link" href="project.html?id=${p.id}">${esc(p.short)}</a>`).join("");
+  const activities = (m.activities || []).map(a => `<span class="chip chip-plain">${esc(a)}</span>`).join("");
   return `
     <article class="card member" id="${esc(m.id)}">
       <div class="avatar">${photo}</div>
@@ -140,6 +146,7 @@ function memberCard(m) {
       <p class="role">${esc(m.role) || "&nbsp;"}</p>
       ${m.bio ? `<p class="bio">${esc(m.bio)}</p>` : ""}
       ${projects ? `<div class="member-projects">${projects}</div>` : ""}
+      ${activities ? `<div class="member-projects"><span class="mini-label">Activities</span>${activities}</div>` : ""}
       ${links ? `<div class="member-links">${links}</div>` : ""}
     </article>`;
 }
@@ -165,27 +172,13 @@ const PAGES = {
     set("stat-projects", PROJECTS.length);
     set("stat-members", TEAM.length);
     set("stat-pubs", PUBLICATIONS.filter(p => p.status === "Published" || p.type === "thesis").length);
-    html("home-axes", AXES.map(a => `
-      <a class="card axis" href="research.html#${a.id}">
-        <span class="axis-icon">${icon(a.icon, "ico lg")}</span>
-        <h3>${esc(a.title)}</h3><p>${esc(a.summary)}</p>
-        <span class="count">${PROJECTS.filter(p => p.axis === a.id).length} project(s)</span>
-      </a>`).join(""));
-    html("home-projects", PROJECTS.map(projectCard).join(""));
+    html("home-projects", PROJECTS.map((p, i) => projectCard(p, i + 1)).join(""));
     html("home-pubs", PUBLICATIONS.filter(p => p.status === "Published").slice(0, 4).map(p => pubItem(p)).join(""));
     html("home-news", NEWS.slice(0, 3).map(newsItem).join(""));
   },
 
   research() {
-    html("research-axes", AXES.map(a => {
-      const projects = PROJECTS.filter(p => p.axis === a.id);
-      return `
-        <section class="axis-block" id="${a.id}">
-          <div class="axis-head"><span class="axis-icon">${icon(a.icon, "ico lg")}</span>
-            <div><h2>${esc(a.title)}</h2><p class="lead">${esc(a.summary)}</p></div></div>
-          <div class="grid cards-2">${projects.map(projectCard).join("") || '<p class="muted">Projects coming soon.</p>'}</div>
-        </section>`;
-    }).join(""));
+    html("research-projects", PROJECTS.map((p, i) => projectCard(p, i + 1)).join(""));
   },
 
   project() {
@@ -196,15 +189,14 @@ const PAGES = {
       return;
     }
     document.title = `${p.short} — ${SITE.name}`;
-    const axis = byId(AXES, p.axis);
     const members = p.members.map(mid => byId(TEAM, mid)).filter(Boolean);
     const pubs = PUBLICATIONS.filter(x => (x.projects || []).includes(p.id));
     const news = NEWS.filter(n => n.project === p.id);
     html("project-root", `
       <section class="page-hero">
         <div class="wrap">
-          <a class="back" href="research.html">← All research</a>
-          <div class="card-top"><span class="chip chip-dark">${esc(axis ? axis.title : "")}</span><span class="status status-dark">${esc(p.status)}</span></div>
+          <a class="back" href="research.html">← All projects</a>
+          <div class="card-top"><span class="chips">${p.group ? `<span class="chip chip-dark">${p.group === "UDT" ? "Urban Digital Twin" : esc(p.group)}</span>` : ""}${p.programme ? `<span class="chip chip-dark">${esc(p.programme)}</span>` : ""}</span>${p.status ? `<span class="status status-dark">${esc(p.status)}</span>` : ""}</div>
           <h1>${esc(p.title)}</h1>
           <p class="lead">${esc(p.summary)}</p>
         </div>
@@ -221,8 +213,11 @@ const PAGES = {
         <aside class="sidebar">
           <div class="card">
             <h4>Team</h4>
-            <ul class="mini-team">${members.map(m => `<li><a href="team.html#${m.id}"><span class="avatar sm">${initials(m.name)}</span><span>${esc(m.name)}<small>${esc(m.role)}</small></span></a></li>`).join("")}</ul>
+            ${members.length
+              ? `<ul class="mini-team">${members.map(m => `<li><a href="team.html#${m.id}"><span class="avatar sm">${initials(m.name)}</span><span>${esc(m.name)}<small>${esc(m.role)}</small></span></a></li>`).join("")}</ul>`
+              : '<p class="muted">Team to be announced.</p>'}
           </div>
+          ${p.collaborations && p.collaborations.length ? `<div class="card"><h4>Collaborations</h4><ul class="plain">${p.collaborations.map(c => `<li>${esc(c)}</li>`).join("")}</ul></div>` : ""}
           ${p.funding.length ? `<div class="card"><h4>Funding & partners</h4><ul class="plain">${p.funding.map(f => `<li>${esc(f)}</li>`).join("")}</ul></div>` : ""}
           ${p.links.length ? `<div class="card"><h4>Links</h4><ul class="plain">${p.links.map(l => `<li><a href="${esc(l.url)}" target="_blank" rel="noopener">${icon("link", "ico sm")} ${esc(l.label)}</a></li>`).join("")}</ul></div>` : ""}
         </aside>

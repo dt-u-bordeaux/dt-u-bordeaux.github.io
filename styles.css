@@ -248,3 +248,15 @@ a.card p { color: var(--muted); font-size: .95rem; }
 .footer-links li { margin-bottom: 6px; }
 .footer-bottom { border-top: 1px solid rgba(159, 179, 200, .18); padding-top: 18px; padding-bottom: 24px; font-size: .85rem; }
 @media (max-width: 720px) { .footer-grid { grid-template-columns: 1fr; } }
+
+/* ---------- Main projects & sub-projects ---------- */
+.axis { display: flex; flex-direction: column; }
+.axis-num { font-family: var(--mono); font-size: .75rem; color: var(--muted); letter-spacing: .1em; display: block; margin-bottom: 4px; }
+.chip-accent { background: var(--accent); color: #fff; }
+.chip-plain { background: var(--surface-2); color: var(--muted); }
+.mini-label { font-size: .75rem; color: var(--muted); align-self: center; }
+.flagship { border-color: var(--accent); }
+.axis p { color: var(--muted); font-size: .95rem; }
+.axis .more { margin-top: auto; }
+.cards-4 { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+.chips { display: flex; gap: 6px; flex-wrap: wrap; }

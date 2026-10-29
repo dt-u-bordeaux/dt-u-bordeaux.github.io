@@ -15,8 +15,30 @@ const SITE = {
   github: "https://github.com/dt-u-bordeaux",
 };
 
-/* Projects, in the order shown on the site. Each one gets its own page
-   (project.html?id=<id>). `group` marks projects that belong to the Urban
+/* Research axes, shown under "What we work on" on the home page. */
+const AXES = [
+  {
+    id: "urban",
+    title: "Urban Digital Twins",
+    icon: "city",
+    summary: "Multi-scale, multi-perspective digital twins of cities and territories — mobility, campus infrastructure, resilience and crisis management.",
+  },
+  {
+    id: "foundations",
+    title: "Digital Twin Foundations",
+    icon: "layers",
+    summary: "Generic architectures, data management frameworks and the systems-engineering methodology that turns modeling & simulation into operational digital twins.",
+  },
+  {
+    id: "human",
+    title: "Human-Centred Digital Twins",
+    icon: "people",
+    summary: "Immersive, cognitive and citizen-facing digital twins that put people in the loop of design and decision making.",
+  },
+];
+
+/* Projects, in the order shown on the site. Each one has its own page,
+   <id>.html, which only needs data-project="<id>" on its <body>. `group` marks projects that belong to the Urban
    Digital Twin research focus. `members` and publication `projects` use the
    ids below. Leave a field empty ("" or []) until the information is
    available. */

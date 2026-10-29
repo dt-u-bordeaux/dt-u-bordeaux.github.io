@@ -9,5 +9,5 @@ Live at https://dt-u-bordeaux.github.io
 All projects, team members, publications and news live in [`data.js`](data.js).
 Add or edit an entry there; every page picks it up automatically.
 
-- `project.html?id=<project-id>` renders one project page (team, publications, news linked by id).
+- Each project has its own page, `<project-id>.html` (team, publications, news linked by id). To add a project, copy one of these pages and change `data-project` on its `<body>`.
 - Plain HTML/CSS/JS, no build step. Served by GitHub Pages from the `main` branch root.

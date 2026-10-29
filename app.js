@@ -4,7 +4,7 @@
 
 const NAV = [
   ["index.html", "Home"],
-  ["research.html", "Research"],
+  ["research.html", "Research Projects"],
   ["team.html", "Team"],
   ["publications.html", "Publications"],
   ["news.html", "News"],
@@ -27,6 +27,7 @@ const ICONS = {
 const icon = (name, cls = "ico") =>
   `<svg class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name] || ""}</svg>`;
 
+const projectHref = p => `${p.id}.html`;
 const esc = (s = "") => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const byId = (list, id) => list.find(x => x.id === id);
 const initials = name => name.split(/\s+/).map(w => w[0]).slice(0, 2).join("").toUpperCase();
@@ -36,9 +37,23 @@ const TYPE_LABEL = { journal: "Journal", conference: "Int'l conference", chapter
 
 function renderLayout() {
   const page = location.pathname.split("/").pop() || "index.html";
-  const current = page === "project.html" ? "research.html" : page;
-  const links = NAV.map(([href, label]) =>
-    `<a href="${href}"${href === current ? ' class="active" aria-current="page"' : ""}>${label}</a>`).join("");
+  const projectPage = PROJECTS.some(p => projectHref(p) === page);
+  const current = projectPage ? "research.html" : page;
+  const links = NAV.map(([href, label]) => {
+    const active = href === current ? ' class="active"' : "";
+    if (href !== "research.html")
+      return `<a href="${href}"${active}${href === page ? ' aria-current="page"' : ""}>${label}</a>`;
+    const items = PROJECTS.map(p =>
+      `<a href="${projectHref(p)}"${projectHref(p) === page ? ' class="active" aria-current="page"' : ""}>${esc(p.short)}<small>${esc(p.title)}</small></a>`).join("");
+    return `
+      <div class="dropdown">
+        <button class="drop-btn${active ? " active" : ""}" id="dropBtn" aria-expanded="false" aria-haspopup="true">${label}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="drop-menu" id="dropMenu">
+          <a href="research.html"${page === "research.html" ? ' class="active" aria-current="page"' : ""}>All projects</a>${items}
+        </div>
+      </div>`;
+  }).join("");
 
   document.getElementById("site-header").innerHTML = `
     <div class="nav wrap">
@@ -81,6 +96,13 @@ function renderLayout() {
     menuBtn.setAttribute("aria-expanded", open);
   });
 
+  const drop = document.getElementById("dropBtn");
+  const dropMenu = document.getElementById("dropMenu");
+  const setDrop = open => { dropMenu.classList.toggle("open", open); drop.setAttribute("aria-expanded", open); };
+  drop.addEventListener("click", e => { e.stopPropagation(); setDrop(!dropMenu.classList.contains("open")); });
+  document.addEventListener("click", e => { if (!e.target.closest(".dropdown")) setDrop(false); });
+  document.addEventListener("keydown", e => { if (e.key === "Escape") setDrop(false); });
+
   document.getElementById("themeToggle").addEventListener("click", () => {
     const root = document.documentElement;
     const dark = root.dataset.theme
@@ -104,7 +126,7 @@ function twinMark() {
 function projectCard(p, n) {
   const label = [p.group, p.programme].filter(Boolean).join(" · ");
   return `
-    <a class="card axis${p.flagship ? " flagship" : ""}" href="project.html?id=${encodeURIComponent(p.id)}">
+    <a class="card axis${p.flagship ? " flagship" : ""}" href="${projectHref(p)}">
       <div class="card-top"><span class="axis-icon">${icon(p.icon, "ico lg")}</span>${p.flagship ? '<span class="chip chip-accent">Application focus</span>' : ""}</div>
       <span class="axis-num">${n ? String(n).padStart(2, "0") + (label ? " · " : "") : ""}${esc(label)}</span>
       <h3>${esc(p.title)}</h3>
@@ -117,7 +139,7 @@ function pubItem(p, showProjects = true) {
   const doi = p.doi ? `<a href="https://doi.org/${esc(p.doi)}" target="_blank" rel="noopener">DOI: ${esc(p.doi)}</a>` : "";
   const projects = showProjects ? (p.projects || []).map(id => {
     const pr = byId(PROJECTS, id);
-    return pr ? `<a class="chip chip-link" href="project.html?id=${pr.id}">${esc(pr.short)}</a>` : "";
+    return pr ? `<a class="chip chip-link" href="${projectHref(pr)}">${esc(pr.short)}</a>` : "";
   }).join("") : "";
   return `
     <li class="pub">
@@ -137,7 +159,7 @@ function memberCard(m) {
   const links = Object.entries(m.links || {}).map(([k, v]) =>
     `<a href="${k === "email" ? "mailto:" + esc(v) : esc(v)}" target="_blank" rel="noopener">${labels[k] || k}</a>`).join("");
   const projects = PROJECTS.filter(p => p.members.includes(m.id))
-    .map(p => `<a class="chip chip-link" href="project.html?id=${p.id}">${esc(p.short)}</a>`).join("");
+    .map(p => `<a class="chip chip-link" href="${projectHref(p)}">${esc(p.short)}</a>`).join("");
   const activities = (m.activities || []).map(a => `<span class="chip chip-plain">${esc(a)}</span>`).join("");
   return `
     <article class="card member" id="${esc(m.id)}">
@@ -161,7 +183,7 @@ function newsItem(n) {
     <li class="news-item">
       <time datetime="${n.date}">${fmtDate(n.date)}</time>
       <div><h3>${esc(n.title)}</h3><p>${esc(n.text)}</p>
-      ${pr ? `<a class="chip chip-link" href="project.html?id=${pr.id}">${esc(pr.short)}</a>` : ""}</div>
+      ${pr ? `<a class="chip chip-link" href="${projectHref(pr)}">${esc(pr.short)}</a>` : ""}</div>
     </li>`;
 }
 
@@ -172,9 +194,12 @@ const PAGES = {
     set("stat-projects", PROJECTS.length);
     set("stat-members", TEAM.length);
     set("stat-pubs", PUBLICATIONS.filter(p => p.status === "Published" || p.type === "thesis").length);
+    html("home-axes", AXES.map(a => `
+      <div class="card axis">
+        <span class="axis-icon">${icon(a.icon, "ico lg")}</span>
+        <h3>${esc(a.title)}</h3><p>${esc(a.summary)}</p>
+      </div>`).join(""));
     html("home-projects", PROJECTS.map((p, i) => projectCard(p, i + 1)).join(""));
-    html("home-pubs", PUBLICATIONS.filter(p => p.status === "Published").slice(0, 4).map(p => pubItem(p)).join(""));
-    html("home-news", NEWS.slice(0, 3).map(newsItem).join(""));
   },
 
   research() {
@@ -182,8 +207,7 @@ const PAGES = {
   },
 
   project() {
-    const id = new URLSearchParams(location.search).get("id");
-    const p = byId(PROJECTS, id);
+    const p = byId(PROJECTS, document.body.dataset.project);
     if (!p) {
       html("project-root", `<div class="wrap section"><h1>Project not found</h1><p><a href="research.html">Back to research</a></p></div>`);
       return;

@@ -168,7 +168,7 @@ const PROJECTS = [
     title: "RegeNexus — System-of-Systems DT / DT Ecosystem",
     short: "RegeNexus",
     icon: "network",
-    status: "",
+    status: "Ongoing",
     summary: "System-of-systems digital twins and digital twin ecosystems for recycling value chains, within the Digital axis of PEPR Recyclage (France 2030).",
     description: [
       "RegeNexus is a project of the Digital axis of PEPR Recyclage, the French national research programme on recycling, recyclability and the reuse of materials (France 2030). It aims to design an agile, interconnected digital ecosystem that serves the sustainability, sovereignty and efficiency of recycling value chains, coordinated by Pascale Marangé (CRAN).",
@@ -195,7 +195,7 @@ const PROJECTS = [
     title: "Digital Twin Verification and Validation",
     short: "DT V&V",
     icon: "check",
-    status: "",
+    status: "Ongoing",
     summary: "Methods for the verification and validation of digital twins.",
     description: [
       "This line of work studies how to verify and validate digital twins, building on the group's background in modeling & simulation.",

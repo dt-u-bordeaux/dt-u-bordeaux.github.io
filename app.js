@@ -201,7 +201,7 @@ const PAGES = {
   home() {
     set("stat-projects", PROJECTS.length);
     set("stat-members", TEAM.length);
-    set("stat-pubs", PUBLICATIONS.filter(p => p.status === "Published" || p.type === "thesis").length);
+    set("stat-pubs", PUBLICATIONS.length);
     html("home-axes", AXES.map(a => `
       <div class="card axis">
         <span class="axis-icon">${icon(a.icon, "ico lg")}</span>

@@ -122,13 +122,18 @@ p { margin: 0 0 1em; }
 .btn-ghost { border-color: rgba(159, 179, 200, .4); color: var(--on-dark); }
 .btn-ghost:hover { background: rgba(255, 255, 255, .06); }
 .hero-visual svg { width: 100%; height: auto; }
-.hero-visual .node { fill: var(--navy); stroke: var(--cyan); stroke-width: 2; }
+.hero-visual .node { fill: var(--navy); stroke: var(--cyan); stroke-width: 2; animation: node-glow 6s ease-in-out infinite; }
 .hero-visual .edge { stroke: rgba(47, 211, 230, .45); stroke-width: 1.4; }
 .hero-visual .ghost { stroke: rgba(159, 179, 200, .5); stroke-dasharray: 4 4; fill: none; }
 .hero-visual .pulse { fill: var(--cyan); animation: pulse 6s ease-in-out infinite; }
 .hero-visual .label { fill: var(--on-dark-muted); font: 11px var(--mono); letter-spacing: .08em; }
 @keyframes pulse { 0%, 100% { opacity: .25; } 50% { opacity: 1; } }
-@media (prefers-reduced-motion: reduce) { .hero-visual .pulse { animation: none; opacity: .8; } }
+/* physical node rings brighten in step with their pulse dot */
+@keyframes node-glow {
+  0%, 100% { stroke-opacity: .35; stroke-width: 2; filter: none; }
+  50% { stroke-opacity: 1; stroke-width: 3; filter: drop-shadow(0 0 6px var(--cyan)); }
+}
+@media (prefers-reduced-motion: reduce) { .hero-visual .pulse, .hero-visual .node { animation: none; opacity: .8; } }
 @media (max-width: 880px) {
   .hero-grid { grid-template-columns: 1fr; padding-top: 56px; padding-bottom: 64px; }
   .hero-visual { max-width: 420px; }

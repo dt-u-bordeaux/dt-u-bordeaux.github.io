@@ -247,7 +247,7 @@ const PAGES = {
           </div>` : ""}
           ${p.collaborations && p.collaborations.length ? `<div class="card"><h4>Collaborations</h4><ul class="plain">${p.collaborations.map(c => `<li>${esc(c)}</li>`).join("")}</ul></div>` : ""}
           ${p.partners ? `<div class="card"><h4>Partner institutions</h4><ul class="plain">${p.partners.map(f => `<li>${esc(f)}</li>`).join("")}</ul></div>` : ""}
-          ${p.funding.length ? `<div class="card"><h4>Funding & partners</h4><ul class="plain">${p.funding.map(f => `<li>${esc(f)}</li>`).join("")}</ul></div>` : ""}
+          ${p.funding.length ? `<div class="card"><h4>${p.partners ? "Funding" : "Funding & partners"}</h4><ul class="plain">${p.funding.map(f => `<li>${esc(f)}</li>`).join("")}</ul></div>` : ""}
           ${p.links.length ? `<div class="card"><h4>Links</h4><ul class="plain">${p.links.map(l => `<li><a href="${esc(l.url)}" target="_blank" rel="noopener">${icon("link", "ico sm")} ${esc(l.label)}</a></li>`).join("")}</ul></div>` : ""}
         </aside>
       </div>`);

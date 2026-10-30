@@ -322,7 +322,9 @@ const TEAM = [
     role: "PhD candidate — AI in Digital Twins",
     photo: "",
     bio: "PhD researcher at the IMS Laboratory, Université de Bordeaux, working on the integration of artificial intelligence in digital twins. The research explores how artificial intelligence can support intelligent digital twin systems for reasoning and decision making in complex systems.",
-    links: {},
+    links: {
+      springer: "https://link.springer.com/researchers/98196615SN",
+    },
   },
   {
     id: "saouani",
@@ -350,6 +352,7 @@ const TEAM = [
 
 /* Publications. type: journal | conference | chapter | national | thesis */
 const PUBLICATIONS = [
+  { year: 2026, type: "journal", status: "Published", title: "A novel centrality-based approach for link prediction", authors: "Lichaa El Khoury, E., Azar, D. & Hanna, E.M.", venue: "Social Network Analysis and Mining, 16(1) — Springer", doi: "10.1007/s13278-026-01624-1", projects: [] },
   { year: 2026, type: "journal", status: "Published", title: "Agile framework for Digital Twin verification and validation: Addressing complexity challenges in cross-disciplinary hybrid systems", authors: "Zahediyami, M., Delos, V., Gorecki, S. & Traoré, M.K.", venue: "SIMULATION: Transactions of The Society for Modeling and Simulation International — SAGE", doi: "10.1177/00375497261464072", projects: ["dt-vv"] },
   { year: 2026, type: "journal", status: "Published", title: "Modeling and simulation of a multi-level digital twin ecosystem for the circular economy", authors: "Aouani, S. et al.", venue: "SIMULATION: Transactions of The Society for Modeling and Simulation International — SAGE", doi: "10.1177/00375497261467054", projects: ["regecos"] },
   { year: 2026, type: "conference", status: "Published", title: "A Pattern-Driven Software Architecture for Multi-Digital Twin Integration in Circular Systems", authors: "Aouani, S., Mohammadi Esfarjani, P., Zahediyami, M., Marangé, P., Robin, V. & Traoré, M.K.", venue: "International Conference on Software and System Engineering (ICoSSE 2026), Lyon — IOS Press", doi: "10.3233/ATDE260463", projects: ["regecos"] },

@@ -13,6 +13,7 @@ const SITE = {
   team: { label: "Enterprise Modelling and Engineering (MEI) team — Production Engineering group, IMS Laboratory", url: "https://www.ims-bordeaux.fr/research-groups/production-engineering/mei/" },
   address: ["IMS Laboratory — UMR 5218 CNRS", "University of Bordeaux, Bordeaux INP", "351 Cours de la Libération", "33405 Talence Cedex, France"],
   email: "",            // group contact email — to be provided
+  contacts: ["mktraore", "zali"],   // TEAM ids listed on the Contact page
   github: "https://github.com/dt-u-bordeaux",
 };
 
@@ -239,6 +240,7 @@ const TEAM = [
     role: "Director of the Digital Twin Research Group — Full Professor",
     photo: "images/team/mamadou-kaba-traore.jpg",
     bio: "Director of the Digital Twin Research Group, Full Professor at the University of Bordeaux and Deputy Director of the IMS Laboratory (UMR 5218 CNRS) since 2022. After a PhD in Computer Science (1992), was a Lecturer at Blaise Pascal University, then Professor at the African University of Science and Technology (AUST) from 2012, serving as its interim President from 2012 to 2014. Coordinates the International Master in Enterprise Engineering at the University of Bordeaux since 2020. Research covers modeling & simulation and digital twins, from foundations and verification & validation to urban, human-centred and circular-economy applications.",
+    emails: ["mamadou-kaba.traore@u-bordeaux.fr", "mamadou-kaba.traore@ims-bordeaux.fr"],
     links: {
       ims: "https://www.ims-bordeaux.fr/researchers-and-publications/traore-mamadou/",
       scholar: "https://scholar.google.com/citations?user=VLiZDY4AAAAJ",
@@ -252,6 +254,7 @@ const TEAM = [
     photo: "images/team/zeeshan-ali.jpg",
     bio: "Postdoctoral researcher on urban digital twins, PhD (Université de Bordeaux, 2025) on a systems-engineering approach to urban digital twin development, PMP. Develops UBUDT, the University of Bordeaux Urban Digital Twin, within the ACT project. Work spans holistic, multi-scale and multi-perspective urban digital twin engineering, generic digital twin architectures, data management for digital twins (DMFDT) and mobility digital twins.",
     activities: ["ENLIGHT ECR"],
+    emails: ["zeeshan.ali@u-bordeaux.fr", "zeeshan.ali@ims-bordeaux.fr"],
     links: {
       website: "https://zeeshanali0001.github.io",
       scholar: "https://scholar.google.com/citations?user=7LGEp1sAAAAJ",

@@ -173,7 +173,12 @@ function memberCard(m) {
       ${projects ? `<div class="member-projects">${projects}</div>` : ""}
       ${activities ? `<div class="member-projects"><span class="mini-label">Activities</span>${activities}</div>` : ""}
       ${links ? `<div class="member-links">${links}</div>` : ""}
+      ${m.emails ? `<div class="member-emails">${emailLinks(m.emails)}</div>` : ""}
     </article>`;
+}
+
+function emailLinks(emails) {
+  return emails.map(e => `<a href="mailto:${esc(e)}">${icon("mail", "ico sm")} ${esc(e)}</a>`).join("");
 }
 
 function fmtDate(d) {
@@ -295,9 +300,11 @@ const PAGES = {
 
   contact() {
     html("contact-address", SITE.address.map(esc).join("<br>"));
-    html("contact-email", SITE.email
-      ? `<a href="mailto:${esc(SITE.email)}">${esc(SITE.email)}</a>`
-      : '<span class="muted">Contact email coming soon.</span>');
+    const people = (SITE.contacts || []).map(id => byId(TEAM, id)).filter(Boolean);
+    html("contact-email", people.map(m => `
+      <div class="contact-person"><strong>${esc(m.name)}</strong><small>${esc(m.role)}</small>
+        <span class="member-emails">${emailLinks(m.emails || [])}</span></div>`).join("")
+      || '<span class="muted">Contact email coming soon.</span>');
   },
 };
 

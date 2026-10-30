@@ -283,3 +283,9 @@ a.card p { color: var(--muted); font-size: .95rem; }
 .affiliation .lead { margin: 0; }
 .btn-outline { border-color: var(--accent); color: var(--accent-strong); }
 .btn-outline:hover { background: var(--accent-soft); }
+.member-emails { display: flex; flex-direction: column; align-items: center; gap: 4px; margin-top: 10px; font-size: .84rem; }
+.member-emails a { display: inline-flex; align-items: center; gap: 6px; word-break: break-all; }
+.contact-person + .contact-person { margin-top: 18px; }
+.contact-person strong { display: block; }
+.contact-person small { display: block; color: var(--muted); font-size: .82rem; margin-bottom: 6px; }
+.contact-person .member-emails { align-items: flex-start; margin-top: 0; }

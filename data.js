@@ -166,8 +166,15 @@ const PROJECTS = [
       "The work is carried out through a PhD jointly supervised at the IMS Laboratory (Université de Bordeaux) and the DISP Laboratory (INSA Lyon).",
     ],
     members: ["rdeval", "pmesfarjani"],
-    funding: ["France 2030 — PEPR Recyclage, Digital axis (operated by ANR; programme led by CNRS with ADEME and CEA)", "Coordinator: Pascale Marangé (CRAN)", "IMS Laboratory — Université de Bordeaux", "DISP Laboratory — INSA Lyon"],
+    funding: ["France 2030 — PEPR Recyclage, Digital axis, 2025–2029 (operated by ANR; programme led by CNRS with ADEME and CEA)"],
+    partners: [
+      "CRAN — Université de Lorraine (coordinator: Pascale Marangé)",
+      "IMS Laboratory — University of Bordeaux",
+      "DISP Laboratory — INSA Lyon",
+      "LAMIH — Université Polytechnique Hauts-de-France",
+    ],
     links: [
+      { label: "RégéNexus — LAMIH, UPHF", url: "https://www.uphf.fr/en/lamih/regenexus" },
       { label: "PEPR Recyclage — Digital axis", url: "https://www.pepr-recyclage.fr/en/projet/digital/" },
       { label: "PEPR Recyclage — First communications of RegeNexus", url: "https://www.pepr-recyclage.fr/premieres-communications-projet-regenexus/" },
       { label: "Project page — DISP Lab", url: "https://www.disp-lab.fr/node/337" },
@@ -200,8 +207,16 @@ const PROJECTS = [
       "Within it, the group develops a digital twin of the SAF supply chain: a model for defining and managing supply chains that are efficient and low in CO2, and a key tool for integrating the whole SAF value chain.",
     ],
     members: ["mdiakite", "mktraore"],
-    funding: ["University of Bordeaux, with Bordeaux INP and INRAE", "Bordeaux Airport", "TotalEnergies"],
-    links: [{ label: "Press release — Bordeaux Airport", url: "https://www.bordeaux.aeroport.fr/en/laeroport/press/press-releases/university-bordeaux-collaboration-bordeaux-airport-bordeaux" }],
+    funding: ["Launched in February 2024 by the University of Bordeaux with Bordeaux Airport and the Bordeaux University Foundation, with contributions from industrial partners"],
+    partners: [
+      "University of Bordeaux (lead), with Bordeaux INP and INRAE",
+      "Bordeaux Airport",
+      "Bordeaux University Foundation",
+      "TotalEnergies",
+    ],
+    links: [
+      { label: "Press release — Bordeaux Airport", url: "https://www.bordeaux.aeroport.fr/en/laeroport/press/press-releases/university-bordeaux-collaboration-bordeaux-airport-bordeaux" },
+    ],
   },
 ];
 

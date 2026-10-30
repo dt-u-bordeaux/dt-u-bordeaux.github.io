@@ -60,7 +60,13 @@ const AXES = [
     title: "Digital Twins in Circular Economy",
     icon: "cycle",
     summary: "Digital twins that support the reuse, remanufacturing and regeneration of products.",
-  },
+  },,
+  {
+    id: "ai",
+    title: "AI, LLMs & Agentic AI for Digital Twins",
+    icon: "spark",
+    summary: "Artificial intelligence, large language models and AI agents that give digital twins reasoning and decision-making capabilities in complex systems.",
+  }
 ];
 
 /* Projects, in the order shown on the site. Each one has its own page,
@@ -205,6 +211,20 @@ const PROJECTS = [
     links: [],
   },
   {
+    id: "ai4dt",
+    title: "AI4DT — AI, LLMs & Agentic AI in Digital Twins",
+    short: "AI4DT",
+    icon: "spark",
+    status: "Ongoing",
+    summary: "Integrating artificial intelligence, large language models and AI agents into digital twins to support reasoning and decision making in complex systems.",
+    description: [
+      "AI4DT explores how artificial intelligence can support intelligent digital twin systems: integrating machine learning, large language models (LLMs) and agentic AI into digital twins so that they can reason about the systems they mirror and support decision making in complex systems.",
+    ],
+    members: ["eelkhoury"],
+    funding: [],
+    links: [],
+  },
+  {
     id: "saf",
     title: "SAF — Digital Twin of the Sustainable Aviation Fuel Supply Chain",
     fullName: "SAF: Towards Certified, Traceable, Sustainable Aviation Fuels",
@@ -294,6 +314,15 @@ const TEAM = [
     links: {
       scholar: "https://scholar.google.com/citations?user=QgT1_twAAAAJ",
     },
+  },
+  {
+    id: "eelkhoury",
+    category: "phd",
+    name: "Elissa Lichaa El Khoury",
+    role: "PhD candidate — AI in Digital Twins",
+    photo: "",
+    bio: "PhD researcher at the IMS Laboratory, Université de Bordeaux, working on the integration of artificial intelligence in digital twins. The research explores how artificial intelligence can support intelligent digital twin systems for reasoning and decision making in complex systems.",
+    links: {},
   },
   {
     id: "saouani",

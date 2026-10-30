@@ -38,9 +38,15 @@ const AXES = [
   },
   {
     id: "product",
-    title: "Product Digital Twins",
+    title: "Product & Production Digital Twins",
     icon: "box",
-    summary: "Digital twins that follow a product through its life cycle and how it is used.",
+    summary: "Digital twins of products and of the production systems that make them — from design and manufacturing to how products are used.",
+  },
+  {
+    id: "supply-chain",
+    title: "Supply Chain Digital Twins",
+    icon: "truck",
+    summary: "Digital twins of supply chains for planning, traceability and efficient, low-carbon logistics — from smart warehouses to sustainable aviation fuel.",
   },
   {
     id: "circular",
@@ -67,9 +73,9 @@ const PROJECTS = [
     group: "UDT",
     programme: "ACT",
     icon: "city",
-    title: "ACT: UBUDT",
+    title: "ACT — UBUDT",
     fullName: "University of Bordeaux Urban Digital Twin, within the Augmented Campus for World Class Transition (ACT) project",
-    short: "ACT: UBUDT",
+    short: "ACT — UBUDT",
     status: "Ongoing",
     summary: "University of Bordeaux Urban Digital Twin: a digital twin of the university's urban ecosystem that supports evidence-based decision making within the ACT project.",
     description: [
@@ -100,7 +106,7 @@ const PROJECTS = [
     group: "UDT",
     programme: "ENLIGHT",
     icon: "globe",
-    title: "UDT — ENLIGHT-DISRUPT",
+    title: "ENLIGHT-DISRUPT — UDT",
     short: "ENLIGHT-DISRUPT",
     status: "Ongoing",
     summary: "European university-alliance project in which the group contributes on data management for urban digital twins and citizen-science activities on city resilience.",

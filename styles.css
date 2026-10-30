@@ -276,3 +276,10 @@ a.card p { color: var(--muted); font-size: .95rem; }
 }
 .full-name { font-family: var(--serif); font-size: 1.2rem; color: var(--on-dark); margin: -.2em 0 .8em; }
 .avatar { box-shadow: 0 0 0 1px var(--border); }
+.team-head { margin: 8px 0 20px; }
+.team-head:not(:first-child) { margin-top: 48px; }
+.footer-team { color: var(--cyan); display: inline-flex; gap: 6px; align-items: flex-start; }
+.affiliation { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+.affiliation .lead { margin: 0; }
+.btn-outline { border-color: var(--accent); color: var(--accent-strong); }
+.btn-outline:hover { background: var(--accent-soft); }

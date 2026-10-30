@@ -79,6 +79,7 @@ function renderLayout() {
       <div>
         <div class="brand footer-brand"><span class="brand-mark">${twinMark()}</span><span class="brand-text"><span><strong>DT</strong>·U-Bordeaux</span></span></div>
         <p class="muted">${esc(SITE.fullName)} — ${esc(SITE.university)}.<br>${esc(SITE.lab)}.</p>
+        <p class="muted"><a class="footer-team" href="${esc(SITE.team.url)}" target="_blank" rel="noopener">${icon("link", "ico sm")} ${esc(SITE.team.label)}</a></p>
       </div>
       <div>
         <h4>Explore</h4>
@@ -156,11 +157,11 @@ function memberCard(m) {
   const photo = m.photo
     ? `<img src="${esc(m.photo)}" alt="${esc(m.name)}" loading="lazy">`
     : `<span>${initials(m.name)}</span>`;
-  const labels = { website: "Website", scholar: "Google Scholar", orcid: "ORCID", linkedin: "LinkedIn", github: "GitHub", email: "Email" };
+  const labels = { website: "Website", ims: "IMS profile", scholar: "Google Scholar", researchgate: "ResearchGate", orcid: "ORCID", linkedin: "LinkedIn", github: "GitHub", email: "Email" };
   const links = Object.entries(m.links || {}).map(([k, v]) =>
     `<a href="${k === "email" ? "mailto:" + esc(v) : esc(v)}" target="_blank" rel="noopener">${labels[k] || k}</a>`).join("");
   const projects = PROJECTS.filter(p => p.members.includes(m.id))
-    .map(p => `<a class="chip chip-link" href="${projectHref(p)}">${esc(p.short)}</a>`).join("");
+    .map(p => `<a class="chip chip-link" href="${projectHref(p)}">${esc((m.projectLabels || {})[p.id] || p.short)}</a>`).join("");
   const activities = (m.activities || []).map(a => `<span class="chip chip-plain">${esc(a)}</span>`).join("");
   return `
     <article class="card member" id="${esc(m.id)}">
@@ -253,7 +254,11 @@ const PAGES = {
   },
 
   team() {
-    html("team-grid", TEAM.map(memberCard).join(""));
+    const groups = [["director", "Director"], ["postdoc", "Postdoctoral researchers"], ["phd", "PhD candidates"]];
+    html("team-grid", groups.map(([cat, title]) => {
+      const people = TEAM.filter(m => m.category === cat);
+      return people.length ? `<h2 class="team-head">${title}</h2><div class="grid cards-3">${people.map(memberCard).join("")}</div>` : "";
+    }).join(""));
   },
 
   publications() {

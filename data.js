@@ -10,6 +10,7 @@ const SITE = {
   university: "University of Bordeaux",
   tagline: "Engineering digital twins of cities, systems and people — from modeling & simulation foundations to deployed platforms.",
   lab: "IMS Laboratory (UMR 5218 CNRS)",
+  team: { label: "Enterprise Modelling and Engineering (MEI) team — Production Engineering group, IMS Laboratory", url: "https://www.ims-bordeaux.fr/research-groups/production-engineering/mei/" },
   address: ["IMS Laboratory — UMR 5218 CNRS", "University of Bordeaux, Bordeaux INP", "351 Cours de la Libération", "33405 Talence Cedex, France"],
   email: "",            // group contact email — to be provided
   github: "https://github.com/dt-u-bordeaux",
@@ -177,24 +178,30 @@ const PROJECTS = [
   },
 ];
 
-/* Team members. Roles and links to be completed. */
+/* Team members, shown on the Team page grouped by `category`
+   (director | postdoc | phd). `projectLabels` renames a project chip on
+   that person's card only. */
 const TEAM = [
   {
     id: "mktraore",
+    category: "director",
     name: "Mamadou Kaba Traoré",
-    role: "Professor — Director of the Digital Twin Research Group",
+    role: "Director of the Digital Twin Research Group — Full Professor",
     photo: "images/team/mamadou-kaba-traore.jpg",
-    bio: "Full Professor at the University of Bordeaux and Deputy Director of the IMS Laboratory (UMR 5218 CNRS) since 2022, directing the Digital Twin Research Group. After a PhD in Computer Science (1992), was a Lecturer at Blaise Pascal University, then Professor at the African University of Science and Technology (AUST) from 2012, serving as its interim President from 2012 to 2014. Coordinates the International Master in Enterprise Engineering at the University of Bordeaux since 2020. Research covers modeling & simulation and digital twins, from foundations and verification & validation to urban, human-centred and circular-economy applications.",
+    bio: "Director of the Digital Twin Research Group, Full Professor at the University of Bordeaux and Deputy Director of the IMS Laboratory (UMR 5218 CNRS) since 2022. After a PhD in Computer Science (1992), was a Lecturer at Blaise Pascal University, then Professor at the African University of Science and Technology (AUST) from 2012, serving as its interim President from 2012 to 2014. Coordinates the International Master in Enterprise Engineering at the University of Bordeaux since 2020. Research covers modeling & simulation and digital twins, from foundations and verification & validation to urban, human-centred and circular-economy applications.",
     links: {
+      ims: "https://www.ims-bordeaux.fr/researchers-and-publications/traore-mamadou/",
       scholar: "https://scholar.google.com/citations?user=VLiZDY4AAAAJ",
     },
   },
   {
     id: "zali",
+    category: "postdoc",
     name: "Zeeshan Ali",
     role: "Postdoctoral researcher — Urban Digital Twin",
     photo: "images/team/zeeshan-ali.jpg",
     bio: "Postdoctoral researcher on urban digital twins, PhD (Université de Bordeaux, 2025) on a systems-engineering approach to urban digital twin development, PMP. Develops UBUDT, the University of Bordeaux Urban Digital Twin, within the ACT project. Work spans holistic, multi-scale and multi-perspective urban digital twin engineering, generic digital twin architectures, data management for digital twins (DMFDT) and mobility digital twins.",
+    projectLabels: { "enlight-disrupt": "ENLIGHT" },
     activities: ["ENLIGHT ECR"],
     links: {
       website: "https://zeeshanali0001.github.io",
@@ -205,6 +212,7 @@ const TEAM = [
   },
   {
     id: "mdiakite",
+    category: "postdoc",
     name: "Mama Diakité",
     role: "Postdoctoral researcher — SAF",
     photo: "images/team/mama-diakite.jpg",
@@ -215,6 +223,7 @@ const TEAM = [
   },
   {
     id: "rdeval",
+    category: "postdoc",
     name: "Rishav Deval",
     role: "Postdoctoral researcher — RegeNexus",
     photo: "images/team/rishav-deval.jpg",
@@ -225,6 +234,7 @@ const TEAM = [
   },
   {
     id: "mzahediyami",
+    category: "phd",
     name: "Milad Zahediyami",
     role: "PhD candidate — DT Verification & Validation",
     photo: "images/team/milad-zahediyami.jpg",
@@ -235,6 +245,7 @@ const TEAM = [
   },
   {
     id: "saouani",
+    category: "phd",
     name: "Sirajeddine Aouani",
     role: "PhD candidate",
     photo: "images/team/sirajeddine-aouani.jpg",
@@ -245,16 +256,20 @@ const TEAM = [
   },
   {
     id: "pmesfarjani",
+    category: "phd",
     name: "Pedram Mohammadi Esfarjani",
     role: "PhD candidate",
     photo: "images/team/pedram-mohammadi-esfarjani.jpg",
     bio: "PhD candidate at the IMS Laboratory, Université de Bordeaux, and the DISP Laboratory, INSA Lyon, supervised by Professors Mamadou Kaba Traoré and Vincent Cheutet. He holds MSc degrees in mechanical engineering and in enterprise engineering, which allow him to bring together physical industrial systems and the information systems that control them. His research interests include digital twins, systems of systems, modelling and simulation, and language-based decision support.",
-    links: {},
+    links: {
+      researchgate: "https://www.researchgate.net/profile/Pedram-Mohammadi-Esfarjani",
+    },
   },
 ];
 
 /* Publications. type: journal | conference | chapter | national | thesis */
 const PUBLICATIONS = [
+  { year: 2026, type: "journal", status: "Published", title: "Agile framework for Digital Twin verification and validation: Addressing complexity challenges in cross-disciplinary hybrid systems", authors: "Zahediyami, M., Delos, V., Gorecki, S. & Traoré, M.K.", venue: "SIMULATION: Transactions of The Society for Modeling and Simulation International — SAGE", doi: "10.1177/00375497261464072", projects: ["dt-vv"] },
   { year: 2026, type: "journal", status: "Published", title: "Modeling and simulation of a multi-level digital twin ecosystem for the circular economy", authors: "Aouani, S. et al.", venue: "SIMULATION: Transactions of The Society for Modeling and Simulation International — SAGE", doi: "10.1177/00375497261467054", projects: ["regecos"] },
   { year: 2026, type: "conference", status: "Published", title: "A Pattern-Driven Software Architecture for Multi-Digital Twin Integration in Circular Systems", authors: "Aouani, S., Mohammadi Esfarjani, P., Zahediyami, M., Marangé, P., Robin, V. & Traoré, M.K.", venue: "International Conference on Software and System Engineering (ICoSSE 2026), Lyon — IOS Press", doi: "10.3233/ATDE260463", projects: ["regecos"] },
   { year: 2026, type: "conference", status: "Published", title: "Microservice-Based Architecture for Digital Twin Implementation: Leveraging Testing Strategies and Design Patterns for Enhanced Testability", authors: "Zahediyami, M., Aouani, S., Gorecki, S., Delos, V. & Traoré, M.K.", venue: "International Conference on Software and System Engineering (ICoSSE 2026), Lyon — IOS Press", doi: "10.3233/ATDE260472", projects: ["dt-vv"] },
@@ -270,7 +285,7 @@ const PUBLICATIONS = [
   { year: 2025, type: "thesis", status: "PhD thesis", title: "Systems Engineering Approach to the Development of Urban Digital Twin", authors: "Ali, Z.", venue: "Doctoral dissertation, Université de Bordeaux", doi: "10.70675/4f2b1d56zf662z4b41za04bz698dbd255c8f", projects: ["ubudt"] },
   { year: 2024, type: "journal", status: "Published", title: "From modeling and simulation to digital twin: evolution or revolution?", authors: "Ali, Z., Biglari, R., Denil, J., Mertens, J., Poursoltan, M. & Traoré, M.K.", venue: "Simulation, 100(7), pp. 751–769 — SAGE", doi: "10.1177/00375497241234680", projects: [] },
   { year: 2024, type: "conference", status: "Published", title: "Contributions of Digital Twins Services to the Implementation of the Circular Economy", authors: "Aouani, S., Marangé, P., Robin, V. & Traoré, M.K.", venue: "Working Conference on Virtual Enterprises (PRO-VE 2024), pp. 147–162 — Springer", doi: "10.1007/978-3-031-71743-7_10", projects: ["regecos"] },
-  { year: 2024, type: "conference", status: "Published", title: "Software Testing Approach for Digital Twin Verification and Validation", authors: "Zahediyami, M., Gorecki, S. & Traoré, M.K.", venue: "Working Conference on Virtual Enterprises (PRO-VE 2024), pp. 115–129 — Springer", doi: "", projects: ["dt-vv"] },
+  { year: 2024, type: "conference", status: "Published", title: "Software Testing Approach for Digital Twin Verification and Validation", authors: "Zahediyami, M., Gorecki, S. & Traoré, M.K.", venue: "Working Conference on Virtual Enterprises (PRO-VE 2024), pp. 115–129 — Springer", doi: "10.1007/978-3-031-71743-7_8", projects: ["dt-vv"] },
   { year: 2024, type: "national", status: "Presented", title: "Toward Digital Twin Verification and Validation: Software Testing Approach", authors: "Zahediyami, M., Gorecki, S. & Traoré, M.K.", venue: "SAGIP — Lyon, France", doi: "", projects: ["dt-vv"] },
   { year: 2024, type: "conference", status: "Published", title: "DMFDT: Data Management Framework for Digital Twin", authors: "Ali, Z., Poursoltan, M. & Traoré, M.K.", venue: "Working Conference on Virtual Enterprises (PRO-VE), pp. 130–144 — Springer", doi: "10.1007/978-3-031-71743-7_9", projects: [] },
   { year: 2024, type: "national", status: "Presented", title: "Building Urban Digital Twin: An Overview", authors: "Ali, Z. & Traoré, M.K.", venue: "SAGIP — Lyon, France", doi: "", projects: ["ubudt"] },

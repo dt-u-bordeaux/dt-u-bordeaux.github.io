@@ -14,17 +14,31 @@ const SITE = {
   address: ["IMS Laboratory — UMR 5218 CNRS", "University of Bordeaux, Bordeaux INP", "351 Cours de la Libération", "33405 Talence Cedex, France"],
   email: "",            // group contact email — to be provided
   contacts: ["mktraore", "zali"],   // TEAM ids listed on the Contact page
-  /* Logos shown under "Affiliations & partners" on the home page. A partner
-     without `logo`, or whose logo file is missing, is shown by name; leave
-     `url` empty when there is no link. */
+  /* Logos shown under "Affiliations & partners" on the home page, one row per
+     group. A partner whose logo file is missing is shown by name; leave `url`
+     empty when there is no link. */
   partners: [
-    { name: "Université de Bordeaux", url: "https://www.u-bordeaux.fr", logo: "images/logos/universite-de-bordeaux.png" },
-    { name: "Bordeaux INP", url: "https://www.bordeaux-inp.fr", logo: "images/logos/bordeaux-inp.png" },
-    { name: "CNRS", url: "https://www.cnrs.fr", logo: "images/logos/cnrs.png" },
-    { name: "IMS Laboratory", url: "https://www.ims-bordeaux.fr", logo: "images/logos/ims-bordeaux.png" },
-    { name: "SAGIP", url: "https://sagip.org/", logo: "images/logos/sagip.png" },
-    { name: "ANR — Agence nationale de la recherche", url: "https://anr.fr", logo: "images/logos/anr.png" },
-    { name: "Ministère de l'Enseignement supérieur et de la Recherche", url: "https://www.enseignementsup-recherche.gouv.fr", logo: "images/logos/mesr.png" },
+    { group: "Affiliations & funders", name: "Université de Bordeaux", url: "https://www.u-bordeaux.fr", logo: "images/logos/universite-de-bordeaux.png" },
+    { group: "Affiliations & funders", name: "Bordeaux INP", url: "https://www.bordeaux-inp.fr", logo: "images/logos/bordeaux-inp.png" },
+    { group: "Affiliations & funders", name: "CNRS", url: "https://www.cnrs.fr", logo: "images/logos/cnrs.png" },
+    { group: "Affiliations & funders", name: "IMS Laboratory", url: "https://www.ims-bordeaux.fr", logo: "images/logos/ims-bordeaux.png" },
+    { group: "Affiliations & funders", name: "SAGIP", url: "https://sagip.org/", logo: "images/logos/sagip.png" },
+    { group: "Affiliations & funders", name: "ANR — Agence nationale de la recherche", url: "https://anr.fr", logo: "images/logos/anr.png" },
+    { group: "Affiliations & funders", name: "Ministère de l'Enseignement supérieur et de la Recherche", url: "https://www.enseignementsup-recherche.gouv.fr", logo: "images/logos/mesr.png" },
+    { group: "Affiliations & funders", name: "Bordeaux University Foundation", url: "", logo: "images/logos/fondation-bordeaux-universite.png" },
+    { group: "Industrial partners", name: "Bordeaux Airport", url: "https://www.bordeaux.aeroport.fr", logo: "images/logos/bordeaux-airport.png" },
+    { group: "Industrial partners", name: "TotalEnergies", url: "https://totalenergies.com", logo: "images/logos/totalenergies.png" },
+    { group: "Industrial partners", name: "Decathlon", url: "https://www.decathlon.fr", logo: "images/logos/decathlon.png" },
+    { group: "Academic partners", name: "ENLIGHT European University Alliance", url: "https://enlight-eu.org", logo: "images/logos/enlight.png" },
+    { group: "Academic partners", name: "Ghent University", url: "https://www.ugent.be", logo: "images/logos/ghent-university.png" },
+    { group: "Academic partners", name: "University of Göttingen", url: "https://www.uni-goettingen.de", logo: "images/logos/university-of-goettingen.png" },
+    { group: "Academic partners", name: "University of Tartu", url: "https://ut.ee", logo: "images/logos/university-of-tartu.png" },
+    { group: "Academic partners", name: "University of Groningen", url: "https://www.rug.nl", logo: "images/logos/university-of-groningen.png" },
+    { group: "Academic partners", name: "University of the Basque Country", url: "https://www.ehu.eus", logo: "images/logos/university-of-the-basque-country.png" },
+    { group: "Academic partners", name: "Université de Lorraine (CRAN)", url: "https://www.univ-lorraine.fr", logo: "images/logos/universite-de-lorraine.png" },
+    { group: "Academic partners", name: "Grenoble INP – UGA (G-SCOP)", url: "https://www.grenoble-inp.fr", logo: "images/logos/grenoble-inp.png" },
+    { group: "Academic partners", name: "INSA Lyon (DISP)", url: "https://www.insa-lyon.fr", logo: "images/logos/insa-lyon.png" },
+    { group: "Academic partners", name: "Université Polytechnique Hauts-de-France (LAMIH)", url: "https://www.uphf.fr", logo: "images/logos/uphf.png" },
   ],
   github: "https://github.com/dt-u-bordeaux",
 };

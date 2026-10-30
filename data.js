@@ -98,7 +98,16 @@ const PROJECTS = [
       "To address KMO-2, i.e. to develop research provision for evidence-based decision making, the UB decided to put in place a Digital Twin (DT) based tool in the urban ecosystem settings of the university to understand future transitions. For this purpose, a PhD started as a small part of ACT and named the DT project the University of Bordeaux Urban Digital Twin (UBUDT). UBUDT addresses the urban dimensions in the UB ecosystem.",
     ],
     members: ["zali", "mktraore"],
-    funding: ["University of Bordeaux — ACT project, Investments for the Future programme (PIA 3) operated by ANR — ANR-20-IDES-0001"],
+    funding: ["ANR — Investments for the Future programme (PIA), ANR-20-IDES-0001", "PIA grant: €17,000,000", "October 2020 – October 2028", "ACT coordinator: Philippe Moretto (University of Bordeaux)"],
+    partners: [
+      "University of Bordeaux (coordinating institution)",
+      "CNRS Aquitaine",
+      "INSERM Nouvelle-Aquitaine",
+      "Inria Bordeaux Sud-Ouest",
+      "INRAE Nouvelle-Aquitaine-Bordeaux",
+      "CHU de Bordeaux",
+      "Bordeaux University Foundation",
+    ],
     links: [
       { label: "ACT project — University of Bordeaux", url: "https://www.u-bordeaux.fr/en/about-us/our-strategy/institutional-projects/act" },
       { label: "ACT project page — ANR (ANR-20-IDES-0001)", url: "https://anr.fr/ProjetIA-20-IDES-0001" },

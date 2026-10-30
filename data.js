@@ -21,7 +21,7 @@ const SITE = {
     { name: "Bordeaux INP", url: "https://www.bordeaux-inp.fr", logo: "images/logos/bordeaux-inp.png" },
     { name: "CNRS", url: "https://www.cnrs.fr", logo: "images/logos/cnrs.png" },
     { name: "IMS Laboratory", url: "https://www.ims-bordeaux.fr", logo: "images/logos/ims-bordeaux.png" },
-    { name: "SAGIP", url: "", logo: "images/logos/sagip.png" },
+    { name: "SAGIP", url: "https://sagip.org/", logo: "images/logos/sagip.png" },
     { name: "ANR — Agence nationale de la recherche", url: "https://anr.fr", logo: "" },
     { name: "Ministère de l'Enseignement supérieur et de la Recherche", url: "https://www.enseignementsup-recherche.gouv.fr", logo: "" },
   ],

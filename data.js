@@ -137,7 +137,7 @@ const PROJECTS = [
       "Within it, the group addresses digital twins as systems of systems: ecosystems of interconnected digital twins that support multi-level decision making and simulation for assessing environmental and economic performance.",
       "The work is carried out through a PhD jointly supervised at the IMS Laboratory (Université de Bordeaux) and the DISP Laboratory (INSA Lyon).",
     ],
-    members: ["pmesfarjani"],
+    members: ["rdeval", "pmesfarjani"],
     funding: ["France 2030 — PEPR Recyclage, Digital axis (operated by ANR; programme led by CNRS with ADEME and CEA)", "Coordinator: Pascale Marangé (CRAN)", "IMS Laboratory — Université de Bordeaux", "DISP Laboratory — INSA Lyon"],
     links: [
       { label: "PEPR Recyclage — Digital axis", url: "https://www.pepr-recyclage.fr/en/projet/digital/" },
@@ -155,20 +155,90 @@ const PROJECTS = [
     description: [
       "This line of work studies how to verify and validate digital twins, building on the group's background in modeling & simulation.",
     ],
-    members: [],
+    members: ["mzahediyami", "mktraore"],
     funding: [],
     links: [],
+  },
+  {
+    id: "saf",
+    title: "SAF — Digital Twin of the Sustainable Aviation Fuel Supply Chain",
+    fullName: "SAF: Towards Certified, Traceable, Sustainable Aviation Fuels",
+    short: "SAF",
+    icon: "plane",
+    status: "Ongoing",
+    summary: "A digital twin of the sustainable aviation fuel (SAF) supply chain, with Bordeaux Airport and TotalEnergies.",
+    description: [
+      "\"SAF: Towards Certified, Traceable, Sustainable Aviation Fuels\" is a University of Bordeaux project, in association with Bordeaux INP and INRAE, launched with Bordeaux Airport and the University of Bordeaux Foundation.",
+      "Within it, the group develops a digital twin of the SAF supply chain: a model for defining and managing supply chains that are efficient and low in CO2, and a key tool for integrating the whole SAF value chain.",
+    ],
+    members: ["mdiakite", "mktraore"],
+    funding: ["University of Bordeaux, with Bordeaux INP and INRAE", "Bordeaux Airport", "TotalEnergies"],
+    links: [{ label: "Press release — Bordeaux Airport", url: "https://www.bordeaux.aeroport.fr/en/laeroport/press/press-releases/university-bordeaux-collaboration-bordeaux-airport-bordeaux" }],
   },
 ];
 
 /* Team members. Roles and links to be completed. */
 const TEAM = [
   {
+    id: "mktraore",
+    name: "Mamadou Kaba Traoré",
+    role: "Professor — Director of the Digital Twin Research Group",
+    photo: "images/team/mamadou-kaba-traore.jpg",
+    bio: "Full Professor at the University of Bordeaux and Deputy Director of the IMS Laboratory (UMR 5218 CNRS) since 2022, directing the Digital Twin Research Group. After a PhD in Computer Science (1992), was a Lecturer at Blaise Pascal University, then Professor at the African University of Science and Technology (AUST) from 2012, serving as its interim President from 2012 to 2014. Coordinates the International Master in Enterprise Engineering at the University of Bordeaux since 2020. Research covers modeling & simulation and digital twins, from foundations and verification & validation to urban, human-centred and circular-economy applications.",
+    links: {
+      scholar: "https://scholar.google.com/citations?user=VLiZDY4AAAAJ",
+    },
+  },
+  {
+    id: "zali",
+    name: "Zeeshan Ali",
+    role: "Postdoctoral researcher — Urban Digital Twin",
+    photo: "",
+    bio: "Postdoctoral researcher on urban digital twins, PhD (Université de Bordeaux, 2025) on a systems-engineering approach to urban digital twin development, PMP. Develops UBUDT, the University of Bordeaux Urban Digital Twin, within the ACT project. Work spans holistic, multi-scale and multi-perspective urban digital twin engineering, generic digital twin architectures, data management for digital twins (DMFDT) and mobility digital twins.",
+    activities: ["ENLIGHT ECR"],
+    links: {
+      website: "https://zeeshanali0001.github.io",
+      scholar: "https://scholar.google.com/citations?user=7LGEp1sAAAAJ",
+      linkedin: "https://www.linkedin.com/in/zeeshanali0001",
+      github: "https://github.com/zeeshanali0001",
+    },
+  },
+  {
+    id: "mdiakite",
+    name: "Mama Diakité",
+    role: "Postdoctoral researcher — SAF",
+    photo: "images/team/mama-diakite.jpg",
+    bio: "Postdoctoral researcher at the IMS Laboratory, University of Bordeaux, working on the SAF project: a digital twin of the sustainable aviation fuel supply chain, in collaboration with Bordeaux Airport and TotalEnergies. Earlier work with the group covers urban digital twins for mobility and immersive, cognitive urban digital twins for sustainable and resilient territories.",
+    links: {
+      scholar: "https://scholar.google.com/citations?user=f521VgkAAAAJ",
+    },
+  },
+  {
+    id: "rdeval",
+    name: "Rishav Deval",
+    role: "Postdoctoral researcher — RegeNexus",
+    photo: "images/team/rishav-deval.jpg",
+    bio: "Postdoctoral researcher at the IMS Laboratory, University of Bordeaux, working on the RegeNexus project on system-of-systems digital twins and digital twin ecosystems for recycling value chains.",
+    links: {
+      scholar: "https://scholar.google.com/citations?user=UmbczfkAAAAJ",
+    },
+  },
+  {
+    id: "mzahediyami",
+    name: "Milad Zahediyami",
+    role: "PhD candidate — DT Verification & Validation",
+    photo: "images/team/milad-zahediyami.jpg",
+    bio: "PhD candidate at the IMS Laboratory, University of Bordeaux, working on the verification and validation of digital twins. The work applies software-testing approaches to digital twin V&V and studies architectures, such as microservices and design patterns, that make digital twins more testable, modular and decoupled.",
+    links: {
+      scholar: "https://scholar.google.com/citations?user=QgT1_twAAAAJ",
+    },
+  },
+  {
     id: "saouani",
     name: "Sirajeddine Aouani",
     role: "PhD candidate",
     photo: "images/team/sirajeddine-aouani.jpg",
-    bio: "PhD candidate in industrial systems engineering and modelling at the University of Bordeaux, working in the RegEcoS project on integrating digital twins to support decision making in the circular economy. His background spans supply chain management, industrial process engineering and digital technologies — ERP (SAP, Odoo), IoT and simulation (AnyLogic, MATLAB, Arena) — applied to smart warehouse management and sustainable product regeneration.",
+    bio: "PhD candidate in industrial systems engineering and modelling at the University of Bordeaux, working in the RegEcoS project on integrating digital twins to support decision making in the circular economy. Background spans supply chain management, industrial process engineering and digital technologies — ERP (SAP, Odoo), IoT and simulation (AnyLogic, MATLAB, Arena) — applied to smart warehouse management and sustainable product regeneration.",
     links: {
       scholar: "https://scholar.google.com/citations?user=M34TUocAAAAJ",
     },
@@ -181,34 +251,13 @@ const TEAM = [
     bio: "PhD candidate at the IMS Laboratory, Université de Bordeaux, and the DISP Laboratory, INSA Lyon, supervised by Professors Mamadou Kaba Traoré and Vincent Cheutet. He holds MSc degrees in mechanical engineering and in enterprise engineering, which allow him to bring together physical industrial systems and the information systems that control them. His research interests include digital twins, systems of systems, modelling and simulation, and language-based decision support.",
     links: {},
   },
-  {
-    id: "mktraore",
-    name: "Mamadou Kaba Traoré",
-    role: "",
-    photo: "",
-    bio: "",
-    links: {},
-  },
-  {
-    id: "zali",
-    name: "Zeeshan Ali",
-    role: "Researcher — PhD, PMP",
-    photo: "",
-    bio: "Digital twin & systems engineering researcher working on urban digital twins: modeling & simulation, complex systems engineering and enterprise interoperability.",
-    activities: ["ENLIGHT ECR"],
-    links: {
-      website: "https://zeeshanali0001.github.io",
-      linkedin: "https://www.linkedin.com/in/zeeshanali0001",
-      github: "https://github.com/zeeshanali0001",
-    },
-  },
 ];
 
 /* Publications. type: journal | conference | chapter | national | thesis */
 const PUBLICATIONS = [
   { year: 2026, type: "journal", status: "Published", title: "Modeling and simulation of a multi-level digital twin ecosystem for the circular economy", authors: "Aouani, S. et al.", venue: "SIMULATION: Transactions of The Society for Modeling and Simulation International — SAGE", doi: "10.1177/00375497261467054", projects: ["regecos"] },
   { year: 2026, type: "conference", status: "Published", title: "A Pattern-Driven Software Architecture for Multi-Digital Twin Integration in Circular Systems", authors: "Aouani, S., Mohammadi Esfarjani, P., Zahediyami, M., Marangé, P., Robin, V. & Traoré, M.K.", venue: "International Conference on Software and System Engineering (ICoSSE 2026), Lyon — IOS Press", doi: "10.3233/ATDE260463", projects: ["regecos"] },
-  { year: 2026, type: "conference", status: "Published", title: "Microservice-Based Architecture for Digital Twin Implementation: Leveraging Testing Strategies and Design Patterns for Enhanced Testability", authors: "Zahediyami, M., Aouani, S., Gorecki, S., Delos, V. & Traoré, M.K.", venue: "International Conference on Software and System Engineering (ICoSSE 2026), Lyon — IOS Press", doi: "10.3233/ATDE260472", projects: [] },
+  { year: 2026, type: "conference", status: "Published", title: "Microservice-Based Architecture for Digital Twin Implementation: Leveraging Testing Strategies and Design Patterns for Enhanced Testability", authors: "Zahediyami, M., Aouani, S., Gorecki, S., Delos, V. & Traoré, M.K.", venue: "International Conference on Software and System Engineering (ICoSSE 2026), Lyon — IOS Press", doi: "10.3233/ATDE260472", projects: ["dt-vv"] },
   { year: 2026, type: "journal", status: "Published", title: "A holistic approach to multi-scale and multi-perspective urban digital twin development", authors: "Ali, Z. & Traoré, M.K.", venue: "Computers, Environment and Urban Systems, 127, 102432 — Elsevier", doi: "10.1016/j.compenvurbsys.2026.102432", projects: ["ubudt"] },
   { year: 2026, type: "chapter", status: "Published", title: "Human-Centred Digital Twin: Concepts, Methods, and Technologies", authors: "Traoré, M.K., Poursoltan, M., Zahediyami, M. & Ali, Z.", venue: "Advanced Architectures and Techniques for Smart Industry, pp. 41–61 — Springer Nature Singapore", doi: "10.1007/978-981-95-5271-9_3", projects: [] },
   { year: 2026, type: "chapter", status: "Published", title: "Immersive and cognitive urban digital twins for sustainable and resilient smart territories", authors: "Traoré, M.K., Diakité, M. & Ali, Z.", venue: "Resilient Complex Adaptive Systems, pp. 425–440 — Wiley", doi: "10.1002/9781394326303.ch15", projects: [] },
@@ -221,6 +270,8 @@ const PUBLICATIONS = [
   { year: 2025, type: "thesis", status: "PhD thesis", title: "Systems Engineering Approach to the Development of Urban Digital Twin", authors: "Ali, Z.", venue: "Doctoral dissertation, Université de Bordeaux", doi: "10.70675/4f2b1d56zf662z4b41za04bz698dbd255c8f", projects: ["ubudt"] },
   { year: 2024, type: "journal", status: "Published", title: "From modeling and simulation to digital twin: evolution or revolution?", authors: "Ali, Z., Biglari, R., Denil, J., Mertens, J., Poursoltan, M. & Traoré, M.K.", venue: "Simulation, 100(7), pp. 751–769 — SAGE", doi: "10.1177/00375497241234680", projects: [] },
   { year: 2024, type: "conference", status: "Published", title: "Contributions of Digital Twins Services to the Implementation of the Circular Economy", authors: "Aouani, S., Marangé, P., Robin, V. & Traoré, M.K.", venue: "Working Conference on Virtual Enterprises (PRO-VE 2024), pp. 147–162 — Springer", doi: "10.1007/978-3-031-71743-7_10", projects: ["regecos"] },
+  { year: 2024, type: "conference", status: "Published", title: "Software Testing Approach for Digital Twin Verification and Validation", authors: "Zahediyami, M., Gorecki, S. & Traoré, M.K.", venue: "Working Conference on Virtual Enterprises (PRO-VE 2024), pp. 115–129 — Springer", doi: "", projects: ["dt-vv"] },
+  { year: 2024, type: "national", status: "Presented", title: "Toward Digital Twin Verification and Validation: Software Testing Approach", authors: "Zahediyami, M., Gorecki, S. & Traoré, M.K.", venue: "SAGIP — Lyon, France", doi: "", projects: ["dt-vv"] },
   { year: 2024, type: "conference", status: "Published", title: "DMFDT: Data Management Framework for Digital Twin", authors: "Ali, Z., Poursoltan, M. & Traoré, M.K.", venue: "Working Conference on Virtual Enterprises (PRO-VE), pp. 130–144 — Springer", doi: "10.1007/978-3-031-71743-7_9", projects: [] },
   { year: 2024, type: "national", status: "Presented", title: "Building Urban Digital Twin: An Overview", authors: "Ali, Z. & Traoré, M.K.", venue: "SAGIP — Lyon, France", doi: "", projects: ["ubudt"] },
   { year: 2023, type: "conference", status: "Published", title: "Design and implementation of a digital twin testbed for smart warehouse operations", authors: "Aouani, S., Daldoul, D., Sboui, L. & Chaabane, A.", venue: "Third International Conference on Signal, Control and Communication (SCC 2023), Hammamet, Tunisia — IEEE", doi: "10.1109/SCC59637.2023.10527573", projects: [] },

@@ -131,14 +131,19 @@ const PROJECTS = [
     short: "RegeNexus",
     icon: "network",
     status: "",
-    summary: "System-of-systems digital twins and digital twin ecosystems.",
+    summary: "System-of-systems digital twins and digital twin ecosystems for recycling value chains, within the Digital axis of PEPR Recyclage (France 2030).",
     description: [
-      "RegeNexus addresses digital twins as systems of systems: ecosystems of interconnected digital twins.",
+      "RegeNexus is a project of the Digital axis of PEPR Recyclage, the French national research programme on recycling, recyclability and the reuse of materials (France 2030). It aims to design an agile, interconnected digital ecosystem that serves the sustainability, sovereignty and efficiency of recycling value chains, coordinated by Pascale Marangé (CRAN).",
+      "Within it, the group addresses digital twins as systems of systems: ecosystems of interconnected digital twins that support multi-level decision making and simulation for assessing environmental and economic performance.",
       "The work is carried out through a PhD jointly supervised at the IMS Laboratory (Université de Bordeaux) and the DISP Laboratory (INSA Lyon).",
     ],
     members: ["pmesfarjani"],
-    funding: ["IMS Laboratory — Université de Bordeaux", "DISP Laboratory — INSA Lyon"],
-    links: [{ label: "Project page — DISP Lab", url: "https://www.disp-lab.fr/node/337" }],
+    funding: ["France 2030 — PEPR Recyclage, Digital axis (operated by ANR; programme led by CNRS with ADEME and CEA)", "Coordinator: Pascale Marangé (CRAN)", "IMS Laboratory — Université de Bordeaux", "DISP Laboratory — INSA Lyon"],
+    links: [
+      { label: "PEPR Recyclage — Digital axis", url: "https://www.pepr-recyclage.fr/en/projet/digital/" },
+      { label: "PEPR Recyclage — First communications of RegeNexus", url: "https://www.pepr-recyclage.fr/premieres-communications-projet-regenexus/" },
+      { label: "Project page — DISP Lab", url: "https://www.disp-lab.fr/node/337" },
+    ],
   },
   {
     id: "dt-vv",

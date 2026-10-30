@@ -209,6 +209,14 @@ const PAGES = {
         <h3>${esc(a.title)}</h3><p>${esc(a.summary)}</p>
       </div>`).join(""));
     html("home-projects", PROJECTS.map((p, i) => projectCard(p, i + 1)).join(""));
+    html("home-partners", (SITE.partners || []).map(p => {
+      const inner = `<span class="logo-box">${p.logo
+        ? `<img src="${esc(p.logo)}" alt="${esc(p.name)}" loading="lazy">`
+        : `<span class="logo-text">${esc(p.name)}</span>`}</span><span class="logo-name">${esc(p.name)}</span>`;
+      return p.url
+        ? `<a class="logo-tile" href="${esc(p.url)}" target="_blank" rel="noopener">${inner}</a>`
+        : `<div class="logo-tile">${inner}</div>`;
+    }).join(""));
   },
 
   research() {

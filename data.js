@@ -14,6 +14,17 @@ const SITE = {
   address: ["IMS Laboratory — UMR 5218 CNRS", "University of Bordeaux, Bordeaux INP", "351 Cours de la Libération", "33405 Talence Cedex, France"],
   email: "",            // group contact email — to be provided
   contacts: ["mktraore", "zali"],   // TEAM ids listed on the Contact page
+  /* Logos shown under "Affiliations & partners" on the home page. A partner
+     without `logo` is shown by name; leave `url` empty when there is no link. */
+  partners: [
+    { name: "Université de Bordeaux", url: "https://www.u-bordeaux.fr", logo: "images/logos/universite-de-bordeaux.png" },
+    { name: "Bordeaux INP", url: "https://www.bordeaux-inp.fr", logo: "images/logos/bordeaux-inp.png" },
+    { name: "CNRS", url: "https://www.cnrs.fr", logo: "images/logos/cnrs.png" },
+    { name: "IMS Laboratory", url: "https://www.ims-bordeaux.fr", logo: "images/logos/ims-bordeaux.png" },
+    { name: "SAGIP", url: "", logo: "images/logos/sagip.png" },
+    { name: "ANR — Agence nationale de la recherche", url: "https://anr.fr", logo: "" },
+    { name: "Ministère de l'Enseignement supérieur et de la Recherche", url: "https://www.enseignementsup-recherche.gouv.fr", logo: "" },
+  ],
   github: "https://github.com/dt-u-bordeaux",
 };
 

@@ -109,13 +109,23 @@ const PROJECTS = [
     title: "ENLIGHT-DISRUPT — UDT",
     short: "ENLIGHT-DISRUPT",
     status: "Ongoing",
-    summary: "European university-alliance project in which the group contributes on data management for urban digital twins and citizen-science activities on city resilience.",
+    summary: "ENLIGHT thematic network on urban digital twins for evidence-based urban management, resilient territories and sustainable development, coordinated by the University of Bordeaux.",
     description: [
-      "Within the ENLIGHT-DISRUPT project, the group contributes expertise on data management for urban digital twins and takes part in citizen-science activities that explore how residents can help shape the \"digital brain\" of a resilient city.",
+      "DISRUPT is an ENLIGHT Thematic Network (2024–2027) on urban digital twins and their use in evidence-based urban management, resilient territories and sustainable development. It is coordinated by the University of Bordeaux with five partner universities of the ENLIGHT European University Alliance, each contributing its own expertise, from digital twin technologies, AI and the Internet of Things to urban management and resilience.",
+      "The network aims to train the next generation of digital twin scientists and engineers, with the digital and interdisciplinary skills needed to address societal transitions at a large scale.",
+      "Its activities include training schools and citizen-science events, such as data management for urban digital twins and exploring how residents can help shape the \"digital brain\" of a resilient city.",
     ],
-    members: ["zali"],
-    funding: ["ENLIGHT European University Alliance"],
-    links: [],
+    members: [],
+    funding: ["ENLIGHT European University Alliance — Thematic Network, 2024–2027"],
+    partners: [
+      "University of Bordeaux, France (coordinator)",
+      "Ghent University, Belgium",
+      "University of Göttingen, Germany",
+      "University of Tartu, Estonia",
+      "University of Groningen, Netherlands",
+      "University of the Basque Country, Spain",
+    ],
+    links: [{ label: "DISRUPT — ENLIGHT", url: "https://enlight-eu.org/university-about-us/funded-initiatives/1370-disrupt" }],
   },
   {
     id: "regecos",
@@ -185,8 +195,7 @@ const PROJECTS = [
 ];
 
 /* Team members, shown on the Team page grouped by `category`
-   (director | postdoc | phd). `projectLabels` renames a project chip on
-   that person's card only. */
+   (director | postdoc | phd). */
 const TEAM = [
   {
     id: "mktraore",
@@ -207,7 +216,6 @@ const TEAM = [
     role: "Postdoctoral researcher — Urban Digital Twin",
     photo: "images/team/zeeshan-ali.jpg",
     bio: "Postdoctoral researcher on urban digital twins, PhD (Université de Bordeaux, 2025) on a systems-engineering approach to urban digital twin development, PMP. Develops UBUDT, the University of Bordeaux Urban Digital Twin, within the ACT project. Work spans holistic, multi-scale and multi-perspective urban digital twin engineering, generic digital twin architectures, data management for digital twins (DMFDT) and mobility digital twins.",
-    projectLabels: { "enlight-disrupt": "ENLIGHT" },
     activities: ["ENLIGHT ECR"],
     links: {
       website: "https://zeeshanali0001.github.io",

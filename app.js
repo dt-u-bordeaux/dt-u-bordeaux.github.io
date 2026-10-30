@@ -162,7 +162,7 @@ function memberCard(m) {
   const links = Object.entries(m.links || {}).map(([k, v]) =>
     `<a href="${k === "email" ? "mailto:" + esc(v) : esc(v)}" target="_blank" rel="noopener">${labels[k] || k}</a>`).join("");
   const projects = PROJECTS.filter(p => p.members.includes(m.id))
-    .map(p => `<a class="chip chip-link" href="${projectHref(p)}">${esc((m.projectLabels || {})[p.id] || p.short)}</a>`).join("");
+    .map(p => `<a class="chip chip-link" href="${projectHref(p)}">${esc(p.short)}</a>`).join("");
   const activities = (m.activities || []).map(a => `<span class="chip chip-plain">${esc(a)}</span>`).join("");
   return `
     <article class="card member" id="${esc(m.id)}">
@@ -241,13 +241,12 @@ const PAGES = {
           ${news.length ? `<h2>News & talks</h2><ul class="news">${news.map(newsItem).join("")}</ul>` : ""}
         </div>
         <aside class="sidebar">
-          <div class="card">
+          ${members.length ? `<div class="card">
             <h4>Team</h4>
-            ${members.length
-              ? `<ul class="mini-team">${members.map(m => `<li><a href="team.html#${m.id}"><span class="avatar sm">${m.photo ? `<img src="${esc(m.photo)}" alt="">` : initials(m.name)}</span><span>${esc(m.name)}<small>${esc(m.role)}</small></span></a></li>`).join("")}</ul>`
-              : '<p class="muted">Team to be announced.</p>'}
-          </div>
+            <ul class="mini-team">${members.map(m => `<li><a href="team.html#${m.id}"><span class="avatar sm">${m.photo ? `<img src="${esc(m.photo)}" alt="">` : initials(m.name)}</span><span>${esc(m.name)}<small>${esc(m.role)}</small></span></a></li>`).join("")}</ul>
+          </div>` : ""}
           ${p.collaborations && p.collaborations.length ? `<div class="card"><h4>Collaborations</h4><ul class="plain">${p.collaborations.map(c => `<li>${esc(c)}</li>`).join("")}</ul></div>` : ""}
+          ${p.partners ? `<div class="card"><h4>Partner institutions</h4><ul class="plain">${p.partners.map(f => `<li>${esc(f)}</li>`).join("")}</ul></div>` : ""}
           ${p.funding.length ? `<div class="card"><h4>Funding & partners</h4><ul class="plain">${p.funding.map(f => `<li>${esc(f)}</li>`).join("")}</ul></div>` : ""}
           ${p.links.length ? `<div class="card"><h4>Links</h4><ul class="plain">${p.links.map(l => `<li><a href="${esc(l.url)}" target="_blank" rel="noopener">${icon("link", "ico sm")} ${esc(l.label)}</a></li>`).join("")}</ul></div>` : ""}
         </aside>

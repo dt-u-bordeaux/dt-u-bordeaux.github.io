@@ -121,7 +121,7 @@ const PROJECTS = [
     description: [
       "RegEcoS (Ecosystem for the regeneration of products based on their uses) is funded by the French National Research Agency (ANR, project ANR-22-CE10-0015). The group's work in the project concerns digital twins in the circular economy.",
     ],
-    members: [],
+    members: ["saouani"],
     funding: ["ANR — ANR-22-CE10-0015"],
     links: [{ label: "Project page — ANR", url: "https://anr.fr/Project-ANR-22-CE10-0015" }],
   },
@@ -159,6 +159,16 @@ const PROJECTS = [
 /* Team members. Roles and links to be completed. */
 const TEAM = [
   {
+    id: "saouani",
+    name: "Sirajeddine Aouani",
+    role: "PhD candidate",
+    photo: "images/team/sirajeddine-aouani.jpg",
+    bio: "PhD candidate in industrial systems engineering and modelling at the University of Bordeaux, working in the RegEcoS project on integrating digital twins to support decision making in the circular economy. His background spans supply chain management, industrial process engineering and digital technologies — ERP (SAP, Odoo), IoT and simulation (AnyLogic, MATLAB, Arena) — applied to smart warehouse management and sustainable product regeneration.",
+    links: {
+      scholar: "https://scholar.google.com/citations?user=M34TUocAAAAJ",
+    },
+  },
+  {
     id: "pmesfarjani",
     name: "Pedram Mohammadi Esfarjani",
     role: "PhD candidate",
@@ -191,6 +201,9 @@ const TEAM = [
 
 /* Publications. type: journal | conference | chapter | national | thesis */
 const PUBLICATIONS = [
+  { year: 2026, type: "journal", status: "Published", title: "Modeling and simulation of a multi-level digital twin ecosystem for the circular economy", authors: "Aouani, S. et al.", venue: "SIMULATION: Transactions of The Society for Modeling and Simulation International — SAGE", doi: "10.1177/00375497261467054", projects: ["regecos"] },
+  { year: 2026, type: "conference", status: "Published", title: "A Pattern-Driven Software Architecture for Multi-Digital Twin Integration in Circular Systems", authors: "Aouani, S., Mohammadi Esfarjani, P., Zahediyami, M., Marangé, P., Robin, V. & Traoré, M.K.", venue: "International Conference on Software and System Engineering (ICoSSE 2026), Lyon — IOS Press", doi: "10.3233/ATDE260463", projects: ["regecos"] },
+  { year: 2026, type: "conference", status: "Published", title: "Microservice-Based Architecture for Digital Twin Implementation: Leveraging Testing Strategies and Design Patterns for Enhanced Testability", authors: "Zahediyami, M., Aouani, S., Gorecki, S., Delos, V. & Traoré, M.K.", venue: "International Conference on Software and System Engineering (ICoSSE 2026), Lyon — IOS Press", doi: "10.3233/ATDE260472", projects: [] },
   { year: 2026, type: "journal", status: "Published", title: "A holistic approach to multi-scale and multi-perspective urban digital twin development", authors: "Ali, Z. & Traoré, M.K.", venue: "Computers, Environment and Urban Systems, 127, 102432 — Elsevier", doi: "10.1016/j.compenvurbsys.2026.102432", projects: ["ubudt"] },
   { year: 2026, type: "chapter", status: "Published", title: "Human-Centred Digital Twin: Concepts, Methods, and Technologies", authors: "Traoré, M.K., Poursoltan, M., Zahediyami, M. & Ali, Z.", venue: "Advanced Architectures and Techniques for Smart Industry, pp. 41–61 — Springer Nature Singapore", doi: "10.1007/978-981-95-5271-9_3", projects: [] },
   { year: 2026, type: "chapter", status: "Published", title: "Immersive and cognitive urban digital twins for sustainable and resilient smart territories", authors: "Traoré, M.K., Diakité, M. & Ali, Z.", venue: "Resilient Complex Adaptive Systems, pp. 425–440 — Wiley", doi: "10.1002/9781394326303.ch15", projects: [] },
@@ -202,8 +215,10 @@ const PUBLICATIONS = [
   { year: 2025, type: "national", status: "Presented", title: "University of Bordeaux Urban Digital Twin: UBUDT", authors: "Ali, Z. & Traoré, M.K.", venue: "SAGIP — Mulhouse, France", doi: "", projects: ["ubudt"] },
   { year: 2025, type: "thesis", status: "PhD thesis", title: "Systems Engineering Approach to the Development of Urban Digital Twin", authors: "Ali, Z.", venue: "Doctoral dissertation, Université de Bordeaux", doi: "10.70675/4f2b1d56zf662z4b41za04bz698dbd255c8f", projects: ["ubudt"] },
   { year: 2024, type: "journal", status: "Published", title: "From modeling and simulation to digital twin: evolution or revolution?", authors: "Ali, Z., Biglari, R., Denil, J., Mertens, J., Poursoltan, M. & Traoré, M.K.", venue: "Simulation, 100(7), pp. 751–769 — SAGE", doi: "10.1177/00375497241234680", projects: [] },
+  { year: 2024, type: "conference", status: "Published", title: "Contributions of Digital Twins Services to the Implementation of the Circular Economy", authors: "Aouani, S., Marangé, P., Robin, V. & Traoré, M.K.", venue: "Working Conference on Virtual Enterprises (PRO-VE 2024), pp. 147–162 — Springer", doi: "10.1007/978-3-031-71743-7_10", projects: ["regecos"] },
   { year: 2024, type: "conference", status: "Published", title: "DMFDT: Data Management Framework for Digital Twin", authors: "Ali, Z., Poursoltan, M. & Traoré, M.K.", venue: "Working Conference on Virtual Enterprises (PRO-VE), pp. 130–144 — Springer", doi: "10.1007/978-3-031-71743-7_9", projects: [] },
   { year: 2024, type: "national", status: "Presented", title: "Building Urban Digital Twin: An Overview", authors: "Ali, Z. & Traoré, M.K.", venue: "SAGIP — Lyon, France", doi: "", projects: ["ubudt"] },
+  { year: 2023, type: "conference", status: "Published", title: "Design and implementation of a digital twin testbed for smart warehouse operations", authors: "Aouani, S., Daldoul, D., Sboui, L. & Chaabane, A.", venue: "Third International Conference on Signal, Control and Communication (SCC 2023), Hammamet, Tunisia — IEEE", doi: "10.1109/SCC59637.2023.10527573", projects: [] },
 ];
 
 /* News & talks (newest first). */

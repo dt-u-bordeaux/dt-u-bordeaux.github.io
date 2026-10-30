@@ -174,7 +174,7 @@ const PROJECTS = [
       "Within it, the group addresses digital twins as systems of systems: ecosystems of interconnected digital twins that support multi-level decision making and simulation for assessing environmental and economic performance.",
       "The work is carried out through a PhD jointly supervised at the IMS Laboratory (Université de Bordeaux) and the DISP Laboratory (INSA Lyon).",
     ],
-    members: ["rdeval", "pmesfarjani"],
+    members: ["mktraore", "rdeval", "pmesfarjani"],
     funding: ["France 2030 — PEPR Recyclage, Digital axis, 2025–2029 (operated by ANR; programme led by CNRS with ADEME and CEA)"],
     partners: [
       "CRAN — Université de Lorraine (coordinator: Pascale Marangé)",

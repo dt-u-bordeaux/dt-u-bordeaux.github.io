@@ -15,15 +15,16 @@ const SITE = {
   email: "",            // group contact email — to be provided
   contacts: ["mktraore", "zali"],   // TEAM ids listed on the Contact page
   /* Logos shown under "Affiliations & partners" on the home page. A partner
-     without `logo` is shown by name; leave `url` empty when there is no link. */
+     without `logo`, or whose logo file is missing, is shown by name; leave
+     `url` empty when there is no link. */
   partners: [
     { name: "Université de Bordeaux", url: "https://www.u-bordeaux.fr", logo: "images/logos/universite-de-bordeaux.png" },
     { name: "Bordeaux INP", url: "https://www.bordeaux-inp.fr", logo: "images/logos/bordeaux-inp.png" },
     { name: "CNRS", url: "https://www.cnrs.fr", logo: "images/logos/cnrs.png" },
     { name: "IMS Laboratory", url: "https://www.ims-bordeaux.fr", logo: "images/logos/ims-bordeaux.png" },
     { name: "SAGIP", url: "https://sagip.org/", logo: "images/logos/sagip.png" },
-    { name: "ANR — Agence nationale de la recherche", url: "https://anr.fr", logo: "" },
-    { name: "Ministère de l'Enseignement supérieur et de la Recherche", url: "https://www.enseignementsup-recherche.gouv.fr", logo: "" },
+    { name: "ANR — Agence nationale de la recherche", url: "https://anr.fr", logo: "images/logos/anr.png" },
+    { name: "Ministère de l'Enseignement supérieur et de la Recherche", url: "https://www.enseignementsup-recherche.gouv.fr", logo: "images/logos/mesr.png" },
   ],
   github: "https://github.com/dt-u-bordeaux",
 };

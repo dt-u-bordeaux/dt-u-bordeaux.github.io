@@ -241,7 +241,7 @@ const PAGES = {
           <div class="card">
             <h4>Team</h4>
             ${members.length
-              ? `<ul class="mini-team">${members.map(m => `<li><a href="team.html#${m.id}"><span class="avatar sm">${initials(m.name)}</span><span>${esc(m.name)}<small>${esc(m.role)}</small></span></a></li>`).join("")}</ul>`
+              ? `<ul class="mini-team">${members.map(m => `<li><a href="team.html#${m.id}"><span class="avatar sm">${m.photo ? `<img src="${esc(m.photo)}" alt="">` : initials(m.name)}</span><span>${esc(m.name)}<small>${esc(m.role)}</small></span></a></li>`).join("")}</ul>`
               : '<p class="muted">Team to be announced.</p>'}
           </div>
           ${p.collaborations && p.collaborations.length ? `<div class="card"><h4>Collaborations</h4><ul class="plain">${p.collaborations.map(c => `<li>${esc(c)}</li>`).join("")}</ul></div>` : ""}

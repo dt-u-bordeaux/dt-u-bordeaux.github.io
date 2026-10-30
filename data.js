@@ -134,9 +134,10 @@ const PROJECTS = [
     summary: "System-of-systems digital twins and digital twin ecosystems.",
     description: [
       "RegeNexus addresses digital twins as systems of systems: ecosystems of interconnected digital twins.",
+      "The work is carried out through a PhD jointly supervised at the IMS Laboratory (Université de Bordeaux) and the DISP Laboratory (INSA Lyon).",
     ],
-    members: [],
-    funding: [],
+    members: ["pmesfarjani"],
+    funding: ["IMS Laboratory — Université de Bordeaux", "DISP Laboratory — INSA Lyon"],
     links: [{ label: "Project page — DISP Lab", url: "https://www.disp-lab.fr/node/337" }],
   },
   {
@@ -157,6 +158,14 @@ const PROJECTS = [
 
 /* Team members. Roles and links to be completed. */
 const TEAM = [
+  {
+    id: "pmesfarjani",
+    name: "Pedram Mohammadi Esfarjani",
+    role: "PhD candidate",
+    photo: "images/team/pedram-mohammadi-esfarjani.jpg",
+    bio: "PhD candidate at the IMS Laboratory, Université de Bordeaux, and the DISP Laboratory, INSA Lyon, supervised by Professors Mamadou Kaba Traoré and Vincent Cheutet. He holds MSc degrees in mechanical engineering and in enterprise engineering, which allow him to bring together physical industrial systems and the information systems that control them. His research interests include digital twins, systems of systems, modelling and simulation, and language-based decision support.",
+    links: {},
+  },
   {
     id: "mktraore",
     name: "Mamadou Kaba Traoré",

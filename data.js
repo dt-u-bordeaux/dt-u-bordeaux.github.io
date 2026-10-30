@@ -25,6 +25,12 @@ const AXES = [
     summary: "Concepts, generic architectures, data management and the systems-engineering methodology that turns modeling & simulation into operational digital twins.",
   },
   {
+    id: "ecosystem",
+    title: "Digital Twin Ecosystem",
+    icon: "network",
+    summary: "Systems of systems: interconnected digital twins that work together as an ecosystem.",
+  },
+  {
     id: "urban",
     title: "Urban Digital Twin",
     icon: "city",
@@ -53,12 +59,6 @@ const AXES = [
     title: "Digital Twins in Circular Economy",
     icon: "cycle",
     summary: "Digital twins that support the reuse, remanufacturing and regeneration of products.",
-  },
-  {
-    id: "ecosystem",
-    title: "Digital Twin Ecosystem",
-    icon: "network",
-    summary: "Systems of systems: interconnected digital twins that work together as an ecosystem.",
   },
 ];
 

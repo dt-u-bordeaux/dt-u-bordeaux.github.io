@@ -193,7 +193,7 @@ const TEAM = [
     id: "zali",
     name: "Zeeshan Ali",
     role: "Postdoctoral researcher — Urban Digital Twin",
-    photo: "",
+    photo: "images/team/zeeshan-ali.jpg",
     bio: "Postdoctoral researcher on urban digital twins, PhD (Université de Bordeaux, 2025) on a systems-engineering approach to urban digital twin development, PMP. Develops UBUDT, the University of Bordeaux Urban Digital Twin, within the ACT project. Work spans holistic, multi-scale and multi-perspective urban digital twin engineering, generic digital twin architectures, data management for digital twins (DMFDT) and mobility digital twins.",
     activities: ["ENLIGHT ECR"],
     links: {

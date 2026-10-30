@@ -246,7 +246,7 @@ const PROJECTS = [
     description: [
       "AI4DT explores how artificial intelligence can support intelligent digital twin systems: integrating machine learning, large language models (LLMs) and agentic AI into digital twins so that they can reason about the systems they mirror and support decision making in complex systems.",
     ],
-    members: ["eelkhoury"],
+    members: ["eelkhoury", "mktraore"],
     funding: [],
     links: [],
   },
@@ -346,8 +346,8 @@ const TEAM = [
     category: "phd",
     name: "Elissa Lichaa El Khoury",
     role: "PhD candidate — AI in Digital Twins",
-    photo: "",
-    bio: "PhD researcher at the IMS Laboratory, Université de Bordeaux, working on the integration of artificial intelligence in digital twins. The research explores how artificial intelligence can support intelligent digital twin systems for reasoning and decision making in complex systems.",
+    photo: "images/team/elissa-lichaa-el-khoury.jpg",
+    bio: "PhD student in Computer Science at the Université de Bordeaux, affiliated with the IMS Laboratory (UMR 5218). She holds a Bachelor of Science in Bioinformatics and a Master of Science in Computer Science from the Lebanese American University, Lebanon. Her doctoral research focuses on integrating Large Language Models with Digital Twin systems to enhance intelligent decision-making in complex systems. Her broader research interests include artificial intelligence, machine learning, modeling and simulation, software engineering and data-driven decision support.",
     links: {
       springer: "https://link.springer.com/researchers/98196615SN",
     },
@@ -378,6 +378,10 @@ const TEAM = [
 
 /* Publications. type: journal | conference | chapter | national | thesis */
 const PUBLICATIONS = [
+  { year: 2026, type: "conference", status: "Published", title: "Toward an AI-enabled digital twin for laboratory occupancy monitoring: A simulation-based proof of concept", authors: "Lichaa El Khoury, E., Azar, D., Possik, J., Solis, A.O. & Traoré, M.K.", venue: "25th International Conference on Modelling and Applied Simulation (MAS 2026)", doi: "", projects: ["ai4dt"] },
+  { year: 2026, type: "conference", status: "Published", title: "A stacked regressor for the prediction of the number of defects in software modules", authors: "El Jammal, R., El Khoury, E., Daou, L., Daoud, C., Possik, J. & Azar, D.", venue: "21st International Conference on Software Technologies (ICSOFT 2026), pp. 141–148 — SCITEPRESS", doi: "10.5220/0015041800004088", projects: [] },
+  { year: 2026, type: "journal", status: "Published", title: "PSO meets LSTM: Adaptive forecasting of NYSE stock prices with volatility-aware performance", authors: "Nader, B.J., Lichaa El Khoury, E. & Azar, D.", venue: "Soft Computing, 30(5), pp. 3301–3324 — Springer", doi: "10.1007/s00500-026-11311-0", projects: [] },
+  { year: 2026, type: "journal", status: "Published", title: "Genetic carrier frequency in genes involved in inborn errors of immunity in the Lebanese population", authors: "Mehawej, C., Chouery, E., Al Kaddoum, R., Habib, H., Bahous, R., Corbani, S., Lichaa El Khoury, E., Hoblos, Y., Hanna, E.M. & Megarbane, A.", venue: "Scientific Reports — Nature", doi: "", projects: [] },
   { year: 2026, type: "journal", status: "Published", title: "A novel centrality-based approach for link prediction", authors: "Lichaa El Khoury, E., Azar, D. & Hanna, E.M.", venue: "Social Network Analysis and Mining, 16(1) — Springer", doi: "10.1007/s13278-026-01624-1", projects: [] },
   { year: 2026, type: "journal", status: "Published", title: "Agile framework for Digital Twin verification and validation: Addressing complexity challenges in cross-disciplinary hybrid systems", authors: "Zahediyami, M., Delos, V., Gorecki, S. & Traoré, M.K.", venue: "SIMULATION: Transactions of The Society for Modeling and Simulation International — SAGE", doi: "10.1177/00375497261464072", projects: ["dt-vv"] },
   { year: 2026, type: "journal", status: "Published", title: "Modeling and simulation of a multi-level digital twin ecosystem for the circular economy", authors: "Aouani, S. et al.", venue: "SIMULATION: Transactions of The Society for Modeling and Simulation International — SAGE", doi: "10.1177/00375497261467054", projects: ["regecos"] },

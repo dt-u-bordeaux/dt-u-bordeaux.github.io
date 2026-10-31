@@ -126,21 +126,26 @@ p { margin: 0 0 1em; }
 .hero-visual .ghost { stroke: rgba(159, 179, 200, .5); stroke-dasharray: 4 4; fill: none; }
 .hero-visual .label { fill: var(--on-dark-muted); font: 11px var(--mono); letter-spacing: .08em; }
 /* Physical twin: solid cyan rings and dots. Digital twin: dashed, light rings
-   with hollow centres. Both sides use the same timing so each pair glows together. */
-.hero-visual .ring, .hero-visual .dot { animation: 6s ease-in-out infinite; }
+   with hollow centres. Both sides share the timing: one pair at a time switches
+   on for 1.5 s, then off, so each physical node and its twin light together. */
+.hero-visual .ring, .hero-visual .dot { animation: 6s linear infinite; }
 .hero-visual .phys .ring { fill: var(--navy); stroke: var(--cyan); stroke-width: 2; animation-name: ring-glow; }
 .hero-visual .phys .dot { fill: var(--cyan); animation-name: dot-glow; }
 .hero-visual .digi .ring { fill: rgba(11, 31, 58, .6); stroke: var(--on-dark); stroke-width: 2; stroke-dasharray: 4 3; animation-name: ring-glow; }
 .hero-visual .digi .dot { fill: none; stroke: var(--on-dark); stroke-width: 1.6; animation-name: dot-glow; }
+/* negative delays so every pair is already in its cycle when the page opens */
 .hero-visual .t0 { animation-delay: 0s; }
-.hero-visual .t1 { animation-delay: 1.5s; }
-.hero-visual .t2 { animation-delay: 3s; }
-.hero-visual .t3 { animation-delay: 4.5s; }
+.hero-visual .t1 { animation-delay: -4.5s; }
+.hero-visual .t2 { animation-delay: -3s; }
+.hero-visual .t3 { animation-delay: -1.5s; }
 @keyframes ring-glow {
-  0%, 100% { stroke-opacity: .35; stroke-width: 2; filter: none; }
-  50% { stroke-opacity: 1; stroke-width: 3; filter: drop-shadow(0 0 6px var(--cyan)); }
+  0%, 25.1%, 100% { stroke-opacity: .3; stroke-width: 2; filter: none; }
+  2%, 23% { stroke-opacity: 1; stroke-width: 3; filter: drop-shadow(0 0 6px var(--cyan)); }
 }
-@keyframes dot-glow { 0%, 100% { opacity: .25; } 50% { opacity: 1; } }
+@keyframes dot-glow {
+  0%, 25.1%, 100% { opacity: .2; }
+  2%, 23% { opacity: 1; }
+}
 @media (prefers-reduced-motion: reduce) { .hero-visual .ring, .hero-visual .dot { animation: none; } }
 @media (max-width: 880px) {
   .hero-grid { grid-template-columns: 1fr; padding-top: 56px; padding-bottom: 64px; }

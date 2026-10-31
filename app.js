@@ -140,7 +140,8 @@ function projectCard(p, n) {
 }
 
 function pubItem(p, showProjects = true) {
-  const doi = p.doi ? `<a href="https://doi.org/${esc(p.doi)}" target="_blank" rel="noopener">DOI: ${esc(p.doi)}</a>` : "";
+  /* `url` overrides the doi.org link when the DOI resolver does not reach the paper */
+  const doi = p.doi ? `<a href="${esc(p.url || "https://doi.org/" + p.doi)}" target="_blank" rel="noopener">DOI: ${esc(p.doi)}</a>` : "";
   const projects = showProjects ? (p.projects || []).map(id => {
     const pr = byId(PROJECTS, id);
     return pr ? `<a class="chip chip-link" href="${projectHref(pr)}">${esc(pr.short)}</a>` : "";

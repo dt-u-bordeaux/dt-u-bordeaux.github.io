@@ -126,25 +126,54 @@ p { margin: 0 0 1em; }
 .hero-visual .ghost { stroke: rgba(159, 179, 200, .5); stroke-dasharray: 4 4; fill: none; }
 .hero-visual .label { fill: var(--on-dark-muted); font: 11px var(--mono); letter-spacing: .08em; }
 /* Physical twin: solid cyan rings and dots. Digital twin: dashed, light rings
-   with hollow centres. Both sides share the timing: one pair at a time switches
-   on for 1.5 s, then off, so each physical node and its twin light together. */
-.hero-visual .ring, .hero-visual .dot { animation: 6s linear infinite; }
-.hero-visual .phys .ring { fill: var(--navy); stroke: var(--cyan); stroke-width: 2; animation-name: ring-glow; }
-.hero-visual .phys .dot { fill: var(--cyan); animation-name: dot-glow; }
-.hero-visual .digi .ring { fill: rgba(11, 31, 58, .6); stroke: var(--on-dark); stroke-width: 2; stroke-dasharray: 4 3; animation-name: ring-glow; }
-.hero-visual .digi .dot { fill: none; stroke: var(--on-dark); stroke-width: 1.6; animation-name: dot-glow; }
-/* negative delays so every pair is already in its cycle when the page opens */
-.hero-visual .t0 { animation-delay: 0s; }
-.hero-visual .t1 { animation-delay: -4.5s; }
-.hero-visual .t2 { animation-delay: -3s; }
-.hero-visual .t3 { animation-delay: -1.5s; }
-@keyframes ring-glow {
-  0%, 25.1%, 100% { stroke-opacity: .3; stroke-width: 2; filter: none; }
-  2%, 23% { stroke-opacity: 1; stroke-width: 3; filter: drop-shadow(0 0 6px var(--cyan)); }
+   with hollow centres. Phase classes t0-t3 mark each physical node and its
+   twin, so both sides switch on and off together. An 18 s cycle of twelve
+   1.5 s steps mixes single pairs and two pairs at once:
+   t0, t1, t2, t3, t0+t2, t1+t3, t2, t0, t2+t3, t1, t0+t3, t2. */
+.hero-visual .ring, .hero-visual .dot { animation: 18s linear infinite; }
+.hero-visual .phys .ring { fill: var(--navy); stroke: var(--cyan); stroke-width: 2; }
+.hero-visual .phys .dot { fill: var(--cyan); }
+.hero-visual .digi .ring { fill: rgba(11, 31, 58, .6); stroke: var(--on-dark); stroke-width: 2; stroke-dasharray: 4 3; }
+.hero-visual .digi .dot { fill: none; stroke: var(--on-dark); stroke-width: 1.6; }
+.hero-visual .ring.t0 { animation-name: ring-t0; }
+.hero-visual .dot.t0 { animation-name: dot-t0; }
+.hero-visual .ring.t1 { animation-name: ring-t1; }
+.hero-visual .dot.t1 { animation-name: dot-t1; }
+.hero-visual .ring.t2 { animation-name: ring-t2; }
+.hero-visual .dot.t2 { animation-name: dot-t2; }
+.hero-visual .ring.t3 { animation-name: ring-t3; }
+.hero-visual .dot.t3 { animation-name: dot-t3; }
+@keyframes ring-t0 {
+  0%, 8.33%, 33.33%, 41.67%, 58.33%, 66.67%, 83.33%, 91.67%, 100% { stroke-opacity: .3; stroke-width: 2; filter: none; }
+  0.6%, 7.73%, 33.93%, 41.07%, 58.93%, 66.07%, 83.93%, 91.07% { stroke-opacity: 1; stroke-width: 3; filter: drop-shadow(0 0 6px var(--cyan)); }
 }
-@keyframes dot-glow {
-  0%, 25.1%, 100% { opacity: .2; }
-  2%, 23% { opacity: 1; }
+@keyframes dot-t0 {
+  0%, 8.33%, 33.33%, 41.67%, 58.33%, 66.67%, 83.33%, 91.67%, 100% { opacity: .2; }
+  0.6%, 7.73%, 33.93%, 41.07%, 58.93%, 66.07%, 83.93%, 91.07% { opacity: 1; }
+}
+@keyframes ring-t1 {
+  0%, 8.33%, 16.67%, 41.67%, 50%, 75%, 83.33%, 100% { stroke-opacity: .3; stroke-width: 2; filter: none; }
+  8.93%, 16.07%, 42.27%, 49.4%, 75.6%, 82.73% { stroke-opacity: 1; stroke-width: 3; filter: drop-shadow(0 0 6px var(--cyan)); }
+}
+@keyframes dot-t1 {
+  0%, 8.33%, 16.67%, 41.67%, 50%, 75%, 83.33%, 100% { opacity: .2; }
+  8.93%, 16.07%, 42.27%, 49.4%, 75.6%, 82.73% { opacity: 1; }
+}
+@keyframes ring-t2 {
+  0%, 16.67%, 25%, 33.33%, 41.67%, 50%, 58.33%, 66.67%, 75%, 91.67%, 100% { stroke-opacity: .3; stroke-width: 2; filter: none; }
+  17.27%, 24.4%, 33.93%, 41.07%, 50.6%, 57.73%, 67.27%, 74.4%, 92.27%, 99.4% { stroke-opacity: 1; stroke-width: 3; filter: drop-shadow(0 0 6px var(--cyan)); }
+}
+@keyframes dot-t2 {
+  0%, 16.67%, 25%, 33.33%, 41.67%, 50%, 58.33%, 66.67%, 75%, 91.67%, 100% { opacity: .2; }
+  17.27%, 24.4%, 33.93%, 41.07%, 50.6%, 57.73%, 67.27%, 74.4%, 92.27%, 99.4% { opacity: 1; }
+}
+@keyframes ring-t3 {
+  0%, 25%, 33.33%, 41.67%, 50%, 66.67%, 75%, 83.33%, 91.67%, 100% { stroke-opacity: .3; stroke-width: 2; filter: none; }
+  25.6%, 32.73%, 42.27%, 49.4%, 67.27%, 74.4%, 83.93%, 91.07% { stroke-opacity: 1; stroke-width: 3; filter: drop-shadow(0 0 6px var(--cyan)); }
+}
+@keyframes dot-t3 {
+  0%, 25%, 33.33%, 41.67%, 50%, 66.67%, 75%, 83.33%, 91.67%, 100% { opacity: .2; }
+  25.6%, 32.73%, 42.27%, 49.4%, 67.27%, 74.4%, 83.93%, 91.07% { opacity: 1; }
 }
 @media (prefers-reduced-motion: reduce) { .hero-visual .ring, .hero-visual .dot { animation: none; } }
 @media (max-width: 880px) {

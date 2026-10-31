@@ -293,6 +293,17 @@ const TEAM = [
     },
   },
   {
+    id: "mdiakite",
+    category: "postdoc",
+    name: "Mama Diakité",
+    role: "Postdoctoral researcher — SAF",
+    photo: "images/team/mama-diakite.jpg",
+    bio: "Postdoctoral researcher at the IMS Laboratory, University of Bordeaux, working on the SAF project: a digital twin of the sustainable aviation fuel supply chain, in collaboration with Bordeaux Airport and TotalEnergies. Earlier work with the group covers urban digital twins for mobility and immersive, cognitive urban digital twins for sustainable and resilient territories.",
+    links: {
+      scholar: "https://scholar.google.com/citations?user=f521VgkAAAAJ",
+    },
+  },
+  {
     id: "zali",
     category: "postdoc",
     name: "Zeeshan Ali",
@@ -306,17 +317,6 @@ const TEAM = [
       scholar: "https://scholar.google.com/citations?user=7LGEp1sAAAAJ",
       linkedin: "https://www.linkedin.com/in/zeeshanali0001",
       github: "https://github.com/zeeshanali0001",
-    },
-  },
-  {
-    id: "mdiakite",
-    category: "postdoc",
-    name: "Mama Diakité",
-    role: "Postdoctoral researcher — SAF",
-    photo: "images/team/mama-diakite.jpg",
-    bio: "Postdoctoral researcher at the IMS Laboratory, University of Bordeaux, working on the SAF project: a digital twin of the sustainable aviation fuel supply chain, in collaboration with Bordeaux Airport and TotalEnergies. Earlier work with the group covers urban digital twins for mobility and immersive, cognitive urban digital twins for sustainable and resilient territories.",
-    links: {
-      scholar: "https://scholar.google.com/citations?user=f521VgkAAAAJ",
     },
   },
   {
@@ -342,17 +342,6 @@ const TEAM = [
     },
   },
   {
-    id: "eelkhoury",
-    category: "phd",
-    name: "Elissa Lichaa El Khoury",
-    role: "PhD candidate — AI in Digital Twins",
-    photo: "images/team/elissa-lichaa-el-khoury.jpg",
-    bio: "PhD student in Computer Science at the Université de Bordeaux, affiliated with the IMS Laboratory (UMR 5218). She holds a Bachelor of Science in Bioinformatics and a Master of Science in Computer Science from the Lebanese American University, Lebanon. Her doctoral research focuses on integrating Large Language Models with Digital Twin systems to enhance intelligent decision-making in complex systems. Her broader research interests include artificial intelligence, machine learning, modeling and simulation, software engineering and data-driven decision support.",
-    links: {
-      scholar: "https://scholar.google.com/citations?user=x9Mm-C8AAAAJ",
-    },
-  },
-  {
     id: "saouani",
     category: "phd",
     name: "Sirajeddine Aouani",
@@ -372,6 +361,17 @@ const TEAM = [
     bio: "PhD candidate at the IMS Laboratory, Université de Bordeaux, and the DISP Laboratory, INSA Lyon, supervised by Professors Mamadou Kaba Traoré and Vincent Cheutet. He holds MSc degrees in mechanical engineering and in enterprise engineering, which allow him to bring together physical industrial systems and the information systems that control them. His research interests include digital twins, systems of systems, modelling and simulation, and language-based decision support.",
     links: {
       researchgate: "https://www.researchgate.net/profile/Pedram-Mohammadi-Esfarjani",
+    },
+  },
+  {
+    id: "eelkhoury",
+    category: "phd",
+    name: "Elissa Lichaa El Khoury",
+    role: "PhD candidate — AI in Digital Twins",
+    photo: "images/team/elissa-lichaa-el-khoury.jpg",
+    bio: "PhD student in Computer Science at the Université de Bordeaux, affiliated with the IMS Laboratory (UMR 5218). She holds a Bachelor of Science in Bioinformatics and a Master of Science in Computer Science from the Lebanese American University, Lebanon. Her doctoral research focuses on integrating Large Language Models with Digital Twin systems to enhance intelligent decision-making in complex systems. Her broader research interests include artificial intelligence, machine learning, modeling and simulation, software engineering and data-driven decision support.",
+    links: {
+      scholar: "https://scholar.google.com/citations?user=x9Mm-C8AAAAJ",
     },
   },
 ];

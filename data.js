@@ -377,7 +377,9 @@ const TEAM = [
 ];
 
 /* Publications. type: journal | conference | chapter | national | thesis.
-   Optional `url` replaces the default https://doi.org/<doi> link. */
+   Optional `url` replaces the default https://doi.org/<doi> link; for a paper
+   with an `isbn` and no DOI, `url` is the link on the ISBN (e.g. the
+   proceedings' table of contents). */
 const PUBLICATIONS = [
   { year: 2026, type: "conference", status: "Published", title: "Toward an AI-enabled digital twin for laboratory occupancy monitoring: A simulation-based proof of concept", authors: "Lichaa El Khoury, E., Azar, D., Possik, J., Solis, A.O. & Traoré, M.K.", venue: "25th International Conference on Modelling and Applied Simulation (MAS 2026)", doi: "", projects: ["ai4dt"] },
   { year: 2026, type: "conference", status: "Published", title: "A stacked regressor for the prediction of the number of defects in software modules", authors: "El Jammal, R., El Khoury, E., Daou, L., Daoud, C., Possik, J. & Azar, D.", venue: "21st International Conference on Software Technologies (ICSOFT 2026), pp. 141–148 — SCITEPRESS", doi: "10.5220/0015041800004088", projects: [] },
@@ -395,7 +397,7 @@ const PUBLICATIONS = [
   { year: 2026, type: "journal", status: "Major revision", title: "A Generic Architecture and its Object-Oriented Implementation for Digital Twins", authors: "Ali, Z., Zahediyami, M., Delos, V. & Traoré, M.K.", venue: "Software and Systems Modeling — Springer", doi: "", projects: [] },
   { year: 2026, type: "journal", status: "Under review", title: "A Hybrid Data and Model-Driven Approach to Mobility Urban Digital Twin", authors: "Ali, Z. & Traoré, M.K.", venue: "Elsevier (submitted)", doi: "", projects: ["ubudt"] },
   { year: 2025, type: "conference", status: "Published", title: "Developing Urban Digital Twin for Mobility", authors: "Ali, Z., Diakité, M. & Traoré, M.K.", venue: "Annual Modeling and Simulation Conference (ANNSIM 2025), pp. 1–13 — IEEE", doi: "10.22360/ANNSIM.2025.CPS+DT.63", url: "https://dl.acm.org/doi/10.22360/ANNSIM.2025.CPS%2BDT.63", projects: ["ubudt"] },
-  { year: 2025, type: "conference", status: "Published", title: "Urban Digital Twin Engineering: A Multi-Perspective and Holistic Approach", authors: "Ali, Z. & Traoré, M.K.", venue: "International Conference on Computers and Industrial Engineering (CIE), pp. 102–111", doi: "", projects: ["ubudt"] },
+  { year: 2025, type: "conference", status: "Published", title: "Urban Digital Twin Engineering: A Multi-Perspective and Holistic Approach", authors: "Ali, Z. & Traoré, M.K.", venue: "52nd International Conference on Computers & Industrial Engineering (CIE52): Bridging Data-Driven Innovation and Sustainable Practices, Lyon, France, 29–31 October 2025, pp. 102–111 — Curran Associates", doi: "", isbn: "9798331332204", url: "https://www.proceedings.com/content/084/084193webtoc.pdf", projects: ["ubudt"] },
   { year: 2025, type: "national", status: "Presented", title: "University of Bordeaux Urban Digital Twin: UBUDT", authors: "Ali, Z. & Traoré, M.K.", venue: "SAGIP — Mulhouse, France", doi: "", projects: ["ubudt"] },
   { year: 2025, type: "thesis", status: "PhD thesis", title: "Systems Engineering Approach to the Development of Urban Digital Twin", authors: "Ali, Z.", venue: "Doctoral dissertation, Université de Bordeaux", doi: "10.70675/4f2b1d56zf662z4b41za04bz698dbd255c8f", projects: ["ubudt"] },
   { year: 2024, type: "journal", status: "Published", title: "From modeling and simulation to digital twin: evolution or revolution?", authors: "Ali, Z., Biglari, R., Denil, J., Mertens, J., Poursoltan, M. & Traoré, M.K.", venue: "Simulation, 100(7), pp. 751–769 — SAGE", doi: "10.1177/00375497241234680", projects: [] },

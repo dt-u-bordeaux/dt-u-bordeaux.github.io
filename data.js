@@ -349,7 +349,7 @@ const TEAM = [
     photo: "images/team/elissa-lichaa-el-khoury.jpg",
     bio: "PhD student in Computer Science at the Université de Bordeaux, affiliated with the IMS Laboratory (UMR 5218). She holds a Bachelor of Science in Bioinformatics and a Master of Science in Computer Science from the Lebanese American University, Lebanon. Her doctoral research focuses on integrating Large Language Models with Digital Twin systems to enhance intelligent decision-making in complex systems. Her broader research interests include artificial intelligence, machine learning, modeling and simulation, software engineering and data-driven decision support.",
     links: {
-      springer: "https://link.springer.com/researchers/98196615SN",
+      scholar: "https://scholar.google.com/citations?user=x9Mm-C8AAAAJ",
     },
   },
   {

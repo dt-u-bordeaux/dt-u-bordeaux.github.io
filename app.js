@@ -159,7 +159,7 @@ function memberCard(m) {
   const photo = m.photo
     ? `<img src="${esc(m.photo)}" alt="${esc(m.name)}" loading="lazy">`
     : `<span>${initials(m.name)}</span>`;
-  const labels = { website: "Website", ims: "IMS profile", scholar: "Google Scholar", researchgate: "ResearchGate", springer: "Springer profile", orcid: "ORCID", linkedin: "LinkedIn", github: "GitHub", email: "Email" };
+  const labels = { website: "Website", ims: "IMS profile", scholar: "Google Scholar", researchgate: "ResearchGate", orcid: "ORCID", linkedin: "LinkedIn", github: "GitHub", email: "Email" };
   const links = Object.entries(m.links || {}).map(([k, v]) =>
     `<a href="${k === "email" ? "mailto:" + esc(v) : esc(v)}" target="_blank" rel="noopener">${labels[k] || k}</a>`).join("");
   const projects = PROJECTS.filter(p => p.members.includes(m.id))
